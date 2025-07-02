@@ -1,23 +1,15 @@
+# .github/workflows/pages.yml
 name: Build & Deploy to GitHub Pages
 
-###############################################################################
-# Trigger: run on every push to the main branch
-###############################################################################
 on:
   push:
     branches: [main]
 
-###############################################################################
-# Required permissions for the Pages deployment step
-###############################################################################
 permissions:
-  contents: read          # to fetch your repo
-  pages: write            # to push to the gh-pages environment
-  id-token: write         # to authenticate with the Pages API
+  contents: read
+  pages: write
+  id-token: write
 
-###############################################################################
-# Single job that builds the site and publishes it
-###############################################################################
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,24 +18,19 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      # 1) Check out your repository
       - uses: actions/checkout@v4
 
-      # 2) Set up Node (use any maintained LTS version your project supports)
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
-      # 3) Install dependencies and run the production build
-      - run: npm ci           # reproducible install using package-lock.json
-      - run: npm run build    # ⇒ builds your Vite/React/TS app into dist/
+      - run: npm ci
+      - run: npm run build          # creates dist/
 
-      # 4) Upload the build output for GitHub Pages
-      - uses: actions/upload-pages-artifact@v2
+      - uses: actions/upload-pages-artifact@v2  # ← uses artifact v4 under the hood
         with:
-          path: dist          # change if your build directory is different
+          path: dist
 
-      # 5) Deploy the uploaded artifact to the GitHub Pages site
       - id: deployment
         uses: actions/deploy-pages@v3
