@@ -1,0 +1,37 @@
+name: Build & Deploy to GitHub Pages
+
+# 1️⃣ Run on every push to main (adapt if you use a different branch)
+on:
+  push:
+    branches: [main]
+
+# 2️⃣ Allow the job to write to Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 3️⃣ Check out your repo
+      - uses: actions/checkout@v4
+
+      # 4️⃣ Install Node (pick any LTS you like)
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 5️⃣ Install deps & build
+      - run: npm ci            # reproducible install
+      - run: npm run build     # produces dist/
+
+      # 6️⃣ Upload dist/ as the artifact GitHub Pages expects
+      - uses: actions/upload-pages-artifact@v2
+        with:
+          path: dist
+
+      # 7️⃣ Publish to the special gh-pages environment
+      - uses: actions/deploy-pages@v3
