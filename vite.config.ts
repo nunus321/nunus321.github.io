@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [checker({ typescript: true })],
   worker: {},
   build: {
+    outDir: "docs",
     sourcemap: false,
   },
   server: {
