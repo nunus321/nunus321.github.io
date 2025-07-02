@@ -1,37 +1,49 @@
 name: Build & Deploy to GitHub Pages
 
-# 1️⃣ Run on every push to main (adapt if you use a different branch)
+###############################################################################
+# Trigger: run on every push to the main branch
+###############################################################################
 on:
   push:
     branches: [main]
 
-# 2️⃣ Allow the job to write to Pages
+###############################################################################
+# Required permissions for the Pages deployment step
+###############################################################################
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: read          # to fetch your repo
+  pages: write            # to push to the gh-pages environment
+  id-token: write         # to authenticate with the Pages API
 
+###############################################################################
+# Single job that builds the site and publishes it
+###############################################################################
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      # 3️⃣ Check out your repo
+      # 1) Check out your repository
       - uses: actions/checkout@v4
 
-      # 4️⃣ Install Node (pick any LTS you like)
+      # 2) Set up Node (use any maintained LTS version your project supports)
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
-      # 5️⃣ Install deps & build
-      - run: npm ci            # reproducible install
-      - run: npm run build     # produces dist/
+      # 3) Install dependencies and run the production build
+      - run: npm ci           # reproducible install using package-lock.json
+      - run: npm run build    # ⇒ builds your Vite/React/TS app into dist/
 
-      # 6️⃣ Upload dist/ as the artifact GitHub Pages expects
+      # 4) Upload the build output for GitHub Pages
       - uses: actions/upload-pages-artifact@v2
         with:
-          path: dist
+          path: dist          # change if your build directory is different
 
-      # 7️⃣ Publish to the special gh-pages environment
-      - uses: actions/deploy-pages@v3
+      # 5) Deploy the uploaded artifact to the GitHub Pages site
+      - id: deployment
+        uses: actions/deploy-pages@v3
