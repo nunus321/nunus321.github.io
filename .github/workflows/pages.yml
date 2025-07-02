@@ -1,0 +1,40 @@
+name: Build & Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]        # deploy every push to main
+
+permissions:
+  contents: read
+  pages: write              # allow the deploy step to publish
+  id-token: write           # allow OIDC authentication
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+
+    steps:
+      # 1) Checkout source
+      - uses: actions/checkout@v4
+
+      # 2) Setup Node
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # 3) Install & build
+      - run: npm ci
+      - run: npm run build       # ⇢ dist/
+
+      # 4) Upload build output
+      - uses: actions/upload-pages-artifact@v2   # ✅ v4 internally
+        with:
+          path: dist
+
+      # 5) Deploy to Pages
+      - id: deploy
+        uses: actions/deploy-pages@v3
