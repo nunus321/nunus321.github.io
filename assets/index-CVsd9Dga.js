@@ -3332,16 +3332,16 @@ void main()
 
 ##   Hi there, 
 
-#  *I'm Ed H*
+#  *I'm Jonas*
 
-##   • Software Engineer
-##   • Digital Designer
-
-
+##   • Computer Science Student
+##   • University of Copenhagen
 
 
 
-### Welcome to ED-Linux 1.0 LTS
+
+
+### Welcome to the terminal
 ### →→ Scroll or type "help" to get started
 `,mv=`
 
