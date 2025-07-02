@@ -3332,7 +3332,7 @@ void main()
 
 ##   Hi there, 
 
-#  *I'm Ed H*
+#  *I'm Jonas*
 
 ##   • Software Engineer
 ##   • Digital Designer
