@@ -5,12 +5,12 @@
 
 #  *I'm Jonas*
 
-##   • Software Engineer
-##   • Digital Designer
+##   • Computer Science Student
+##   • University of Copenhagen
 
 
 
 
 
-### Welcome to ED-Linux 1.0 LTS
+### Welcome to the Linux terminal
 ### →→ Scroll or type "help" to get started

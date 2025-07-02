@@ -4,8 +4,6 @@
 
 # Hi there
 
-My name is Ed Hinrichsen, I’m an award-winning web dev / digital designer and full stack software engineer. I have a passion for all things technology and design, from software engineering & machine learning to UI/UX & 3D graphics.
+My name is Jonas Mersal, a computer-science student at the University of Copenhagen. I wrote my first lines of code in primary school and never stopped; by high school I was leading ambitious class projects and finishing the course with top marks. Today I’m especially drawn to machine learning, AI, and software development, turning ideas into everything from compact neural-network prototypes to full-stack web apps.
 
-In addition to my love of technology and design, I am also interested in education, history, economics and politics.
-
-Type "cd ~/projects" then "ls" to see details of some of the projects I have developed over my fifteen plus years of coding experience.
+In addition to my love of technology, I follow politics, dive into competitive gaming, and push my limits in the gym.
