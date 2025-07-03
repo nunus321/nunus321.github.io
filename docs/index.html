@@ -130,39 +130,51 @@
       <section>
         <h1 id="projects">Projects</h1>
         <hr />
-        <h2>Page Buddy</h2>
+        <h2>Math Toolkit</h2>
         <h3>2023-24</h3>
         <ul class="skills">
-          <li>React</li>
-          <li>TypeScript</li>
-          <li>Gleam (Erlang)</li>
-          <li>Sql</li>
-          <li>AI</li>
-          <li>Web Dev</li>
+          <li>Javascript</li>
+          <li>HTML</li>
+          <li>CSS</li>
         </ul>
         <p>
-          Page Buddy is a word processor, with everything you would expect from
-          WYSIWYG editor along with a novel drag and drop user interface and a
-          powerful style/theme engine. Additionally it provides: rich
-          accessibility tools, including, an embedded neural network (Wasm /
-          WebGPU) for auto complete, developed to help people with dyslexia
-          (like me) with their writing; and the ability for users to publish
-          their documents to the web.
+          I co-created this lightweight desktop application to help Danish primary- and secondary-school students explore mathematics visually instead of just on paper.
+          
+          The app has two main parts:
+          
+          • Function plotter – Type any equation (for example 2*x^2 – 3) and see the graph appear instantly. Four sliders let you stretch, compress, or shift the curve along the x- and y-axes, so students can watch in real time how each change affects the shape of the function.
+          
+          • Geometry calculator – Pick a shape and the program walks you through the numbers:
+           • right-angled triangle
+           • general triangle
+           • square / rectangle
+           • circle
+          It calculates missing side lengths, angles, perimeter, and area, and shows the working so learners can follow every step.
+          
+          I built it to give classmates an intuitive “try-and-see” tool and to hone my own skills in Java and JavaFX, including custom canvas drawing, event-driven slider bindings, and an expression parser. The screenshots illustrate the main menu and the live plotter; similar views handle each geometric calculation.
         </p>
         <p>
           Page Buddy is about 35K lines of code, it even has some users (~100
           WAUs)!
         </p>
-        <p><a href="https://pagebuddy.app">pagebuddy.app</a></p>
+        <!-- <p><a href="https://pagebuddy.app">pagebuddy.app</a></p> -->
         <br />
         <div class="image">
           <img
-            src="./assets/pagebuddy1-CT5JuZbZ-CT5JuZbZ-CT5JuZbZ.webp"
+            src="./assets/Matematikprogram2-bTepQ3_g.jpeg"
             width="100%"
             alt="Page Buddy screenshot"
             loading="lazy"
             style="aspect-ratio: 2443 / 1576"
           />
+
+          <img
+          src="./assets/matematikprogram1-DzGjC7Pk.jpeg"
+          width="100%"
+          alt="Page Buddy screenshot"
+          loading="lazy"
+          style="aspect-ratio: 2443 / 1576"
+        />
         </div>
         <hr />
         <h2>Folio (This Website)</h2>
@@ -604,20 +616,6 @@
       </div>
       <div id="loading-items">Starting...</div>
     </div>
-    <footer>
-      <div>Developed + Designed by Ed Hinrichsen.</div>
-      <div>Computer design based on the Commodore PET 8296.</div>
-      <div>
-        Built on the traditional land of the Wurundjeri and Boon Wurrung peoples
-        of the Kulin nation. I pay my respect to Elders past, present and
-        emerging.
-      </div>
-      <div>
-        Sovereignty has never been ceded. It always was and always will be
-        Aboriginal land.
-      </div>
-      <div>COPYRIGHT © 2022-2024 Edward Hinrichsen.</div>
-    </footer>
     <script>
       function closeMenu() {
         document.getElementsByTagName("nav")[0].classList.remove(["active"]);
