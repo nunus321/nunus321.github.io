@@ -125,6 +125,23 @@
           Below are details of some of the projects I have developed over the
           years.
         </p>
+
+        <p>
+          I speak both Danish and English, so feel free to reach out to me in either.
+        </p>
+<div class="image">
+  <img
+    src="./assets/danishflag.avif"
+    alt="Writing Buddy screenshot"
+    style="width: 100px; aspect-ratio: 10 / 5;"
+  />
+  <img
+    src="./assets/englishflag.png"
+    alt="Writing Buddy screenshot"
+    style="width: 100px; aspect-ratio: 50 / 25;"
+  />
+
+</div>
       </section>
 
       <section>
@@ -138,24 +155,20 @@
           <li>CSS</li>
         </ul>
         <p>
-          I co-created this lightweight desktop application to help Danish primary- and secondary-school students explore mathematics visually instead of just on paper.
-          
-          The app has two main parts:
-          
-          • Function plotter – Type any equation (for example 2*x^2 – 3) and see the graph appear instantly. Four sliders let you stretch, compress, or shift the curve along the x- and y-axes, so students can watch in real time how each change affects the shape of the function.
-          
-          • Geometry calculator – Pick a shape and the program walks you through the numbers:
-           • right-angled triangle
-           • general triangle
-           • square / rectangle
-           • circle
-          It calculates missing side lengths, angles, perimeter, and area, and shows the working so learners can follow every step.
-          
-          I built it to give classmates an intuitive “try-and-see” tool and to hone my own skills in Java and JavaFX, including custom canvas drawing, event-driven slider bindings, and an expression parser. The screenshots illustrate the main menu and the live plotter; similar views handle each geometric calculation.
-        </p>
-        <p>
-          Page Buddy is about 35K lines of code, it even has some users (~100
-          WAUs)!
+          I developed this lightweight desktop web application to help Danish primary- and
+           secondary-school students explore mathematics visually instead of just on paper.
+          The app has a function plotter where you can type any equation (for example 2*x^2 – 3)
+           and see the graph appear instantly. In addition it has four sliders that let you stretch,
+            compress, or shift the curve along the x- and y-axes, so students can watch in real time how
+             each change affects the shape of the function.
+          It also has a geometry calculator which supports the geometrical types: <br>
+           • Right-angled triangle <br>
+           • General triangle<br>
+           • Square / Rectangle<br>
+           • Circle<br>
+          It calculates side lengths, angles, perimeter, and areas from the user inserted information.
+          I initially built it to give classmates an intuitive “try-and-see” tool and to hone my own skills in Javascript,
+           HTML and CSS. The screenshots illustrate the live plotter and the main menu.
         </p>
         <!-- <p><a href="https://pagebuddy.app">pagebuddy.app</a></p> -->
         <br />
@@ -177,21 +190,30 @@
         />
         </div>
         <hr />
-        <h2>Folio (This Website)</h2>
+        <h2>Breakout Arcade Game</h2>
         <h3>2022</h3>
         <ul class="skills">
-          <li>TypeScript</li>
-          <li>WebGL</li>
-          <li>Shader Language</li>
-          <li>Web Dev</li>
+          <li>C#</li>
+          <li>NUnit testing</li>
+          <li>Parsing</li>
         </ul>
         <p>
-          This was a project I built for fun over one of my uni breaks, built in
-          TypeScript and THREE.js, it contains a number of nifty features such
-          as: a 3D retro computer that you can interact with, a very simple UNIX
-          shell implementation, a files system implementation, markdown
-          interpreter and renderer, and a text layout engine.
+          This project is a modern Breakout-style arcade game written in C#,
+           produced as the capstone for my Software Development course at the University of Copenhagen. 
+           Its architecture follows SOLID principles, using a singleton event-bus mediator and a dedicated state machine 
+           to keep menus, pause, and gameplay modules cleanly separated. 
+           Levels load from simple text files that our custom parser converts on the fly,
+            letting anyone design stages of up to 288 blocks without touching the code. 
+            Special blocks can drop random power-ups or hazards, adding an extra layer of strategy and replay value. 
+            The codebase is fully unit-tested with NUnit and extensively play-tested for reliability; 
+            watch the gameplay video and explore the open-source repository on GitHub.
         </p>
+        <div class="image">
+          <video width="100%" controls loop autoplay>
+            <source src="./assets/breakoutgameshowcase.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
         <hr />
         <h2>Writing Buddy</h2>
         <h3>2021</h3>
@@ -309,7 +331,7 @@
         </p>
         <div class="image">
           <video width="100%" controls loop autoplay>
-            <source src="./assets/Glowbal-D_GSRTBE-D_GSRTBE.mp4" type="video/mp4" />
+            <source src="./assets/breakoutgameshowcase.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
