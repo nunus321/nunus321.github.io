@@ -1,6 +1,3 @@
-!(/images/ed-title.png?aspect=2&noflow=true&width=1.7)
-
-
 ##   Hi there, 
 
 #  *I'm Jonas*

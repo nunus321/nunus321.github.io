@@ -2,14 +2,14 @@
 
 
 
-## Welcome to ED-Linux 1.0 LTSSSSSS
+## Welcome to Linux terminal
 
 
 
 #  Hi there,
-#  *I'm Edward*
-#  -Creative Developer
-##     — Computer Science graduate of
-##        the University of Melbourne
+#  *I'm Jonas*
+#  -Computer science student
+##     — Computer Science at 
+##        the University of Copenhagen
 ##
 ###   *Scroll* or type "help" to get started
