@@ -2,12 +2,39 @@
 
 
 
-## *My Own Programming Language*
-## 2021
+## *Fake-News Detector*
+## 2025
 
-### • Lexing & Tokenization, Syntactic Analysis,
-### • Parsing, Compiler & Interpreter Design
+### • Machine Learning, Python, Tokenization, Deep Learning, NUnit testing
+### • Neural Network, Support-Vector Machine, Random Forest, Naive Bayes
 
-For a while now I have been fascinated by computer languages and when over the semester break, I had a bit of time on my hands, I decided to—as an academic exercise—design my own language. My language consists of two components; the recursive descent parser which first lexers and tokenizes the input before generating an abstract syntax tree (AST); and the interpreter which traverses the AST and produces the appropriate output.
+I have a fascination for machine learning and so I had a lot of fun building this full natural-language-processing pipeline
+that on its own can tell whether an online news article is fake or reliable. 
 
-My language currently includes features such as closures, lambda expressions, first class and pure functions, making it well-suited to functional programming. In addition to this I plan to add support for multithreading and a stronger type system plus optimizations for tail-call recursion. I am also experimenting with implementing a stack based virtual machine—bytecode interpreter—to run my language.
+Here is a description of the program:
+After cleaning and organising a large collection of stories, I trained several 
+well-established machine-learning models including: Naive Bayes, logistic regression, 
+Random Forest, Support-Vector Machine, and a neural network and selected the
+model that performed best. The final system gets the answer right more than 
+96 % of the time on unseen articles. To keep the results transparent, 
+I built a dashboard that highlights the words in each story that raised a 
+red flag, so anyone can see why the program reached its decision. By applying 
+these complex mathematical models, the detector uncovers patterns in language 
+that humans would be very unlikely to spot on their own, making it a powerful aid in 
+the fight against misinformation. 
+
+
+        <h2>Fake-News Detector</h2>
+        <h3>2025</h3>
+        <ul class="skills">
+          <li>Machine Learning</li>
+          <li>Deep Learning</li>
+          <li>NUnit testing</li>
+          <li>Neural Network</li>
+          <li>Python</li>
+          <li>Naive Bayes</li>
+          <li>Support-Vector Machine</li>
+          <li>Random Forest</li>
+          <li>Neural Network</li>
+        </ul>
+        <p>

@@ -2,19 +2,24 @@
 
 
 
-## *test*
-## 2023-24
+## *Math Toolkit*
+## 2021
 
-### • React, TypeScript, Gleam (Erlang),
-### • Sql, AI, Web Dev
-For my final year at Danish gymnasium I develop a mobile application 
-that estimates a user’s blood-alcohol content (BAC) with nothing more than the 
-phone in their pocket. After a brief set-up where the user enters weight and biological sex, 
-the app calculates BAC in real time each time a drink is added, relying on the official equations 
-published by the danish national health portal, Sundhed.dk. 
+### • Javascript
+### • HTML, CSS, p5.js, 
+I developed this lightweight desktop web application to help Danish primary- and
+secondary-school students explore mathematics visually instead of just on paper.
 
-It also explains the typical side-effects at 
-different BAC levels, indicates when it is unsafe to drive, keeps daily and weekly consumption 
-statistics and even shows a countdown to the point at which the user is expected to be sober again. 
-The project gave me hands-on experience with mobile UI design, data validation and the challenge of 
-translating clinical formulas into efficient, user-friendly code
+Here is a description of the program:
+The app has a function plotter where you can type any equation (linear, polynomials etc.)
+and see the graph appear instantly. In addition it has four sliders that let you stretch,
+compress, or shift the curve along the x- and y-axes, so students can watch in real time how
+    each change affects the shape of the function.
+It also has a geometry calculator which supports the geometrical types: <br>
+ • Right-angled triangle <br>
+ • General triangle<br>
+ • Square / Rectangle<br>
+ • Circle<br>
+It calculates side lengths, angles, perimeter, and areas from the user inserted information.
+I initially built it to give classmates an intuitive “try-and-see” tool and to hone my own skills in Javascript,
+HTML and CSS. The pictures under here showcase the live plotter and the main menu.

@@ -3362,39 +3362,54 @@ https://www.linkedin.com/in/jonasmersal/
 
 
 
-## *test*
-## 2023-24
-
-### • React, TypeScript, Gleam (Erlang),
-### • Sql, AI, Web Dev
-For my final year at Danish gymnasium I develop a mobile application 
-that estimates a user’s blood-alcohol content (BAC) with nothing more than the 
-phone in their pocket. After a brief set-up where the user enters weight and biological sex, 
-the app calculates BAC in real time each time a drink is added, relying on the official equations 
-published by the danish national health portal, Sundhed.dk. 
-
-It also explains the typical side-effects at 
-different BAC levels, indicates when it is unsafe to drive, keeps daily and weekly consumption 
-statistics and even shows a countdown to the point at which the user is expected to be sober again. 
-The project gave me hands-on experience with mobile UI design, data validation and the challenge of 
-translating clinical formulas into efficient, user-friendly code`,vv=`
-
-
-
-## *Folio (This Website)*
-## 2022
-
-### • TypeScript, WebGL,
-### • Shader Language, Web Dev
-This was a project I built for fun over one of my uni breaks, built in TypeScript and THREE.js, it contains a number of nifty features such as: a 3D retro computer that you can interact with, a very simple UNIX shell implementation, a files system implementation, markdown interpreter and renderer, and a text layout engine.`,yv=`
-
-
-
-## *Writing Buddy*
+## *Math Toolkit*
 ## 2021
 
-### • React, TypeScript, UI/UX, Branding,
-### • AI, Deep Learning, Web Dev
+### • Javascript
+### • HTML, CSS, p5.js, 
+I developed this lightweight desktop web application to help Danish primary- and
+secondary-school students explore mathematics visually instead of just on paper.
+
+Here is a description of the program:
+The app has a function plotter where you can type any equation (linear, polynomials etc.)
+and see the graph appear instantly. In addition it has four sliders that let you stretch,
+compress, or shift the curve along the x- and y-axes, so students can watch in real time how
+    each change affects the shape of the function.
+It also has a geometry calculator which supports the geometrical types: <br>
+ • Right-angled triangle <br>
+ • General triangle<br>
+ • Square / Rectangle<br>
+ • Circle<br>
+It calculates side lengths, angles, perimeter, and areas from the user inserted information.
+I initially built it to give classmates an intuitive “try-and-see” tool and to hone my own skills in Javascript,
+HTML and CSS. The pictures under here showcase the live plotter and the main menu.`,vv=`
+
+
+
+## *Breakout Game*
+## 2024
+
+### • C#, Game Dev,
+### • NUnit testing, Parsing
+This project is a modern Breakout-style arcade game written in C#,
+produced as the capstone for my Software Development course at the University of Copenhagen. 
+
+Here is a description of the program:
+Its architecture follows SOLID principles, using a singleton event-bus mediator and a dedicated state machine 
+to keep menus, pause, and gameplay modules cleanly separated. 
+Levels load from simple text files that our custom parser converts on the fly,
+letting anyone design stages of up to 288 blocks without touching the code. 
+Special blocks can drop random power-ups or hazards, adding an extra layer of strategy and replay value. 
+The codebase is fully unit-tested with NUnit and extensively play-tested for reliability; 
+watch the gameplay video and explore the open-source repository on GitHub. Below is a video of my developed game.`,yv=`
+
+
+
+## *Mobile app: Blood-alcohol-estimator*
+## 2021
+
+### • C#, Unity, UI/UX,
+### • Mobile App dev
 For my final year at Danish gymnasium I develop a mobile application 
 that estimates a user’s blood-alcohol content (BAC) with nothing more than the 
 phone in their pocket. After a brief set-up where the user enters weight and biological sex, 
@@ -3409,25 +3424,61 @@ translating clinical formulas into efficient, user-friendly code`,_v=`
 
 
 
-## *My Own Programming Language*
-## 2021
+## *Fake-News Detector*
+## 2025
 
-### • Lexing & Tokenization, Syntactic Analysis,
-### • Parsing, Compiler & Interpreter Design
+### • Machine Learning, Python, Tokenization, Deep Learning, NUnit testing
+### • Neural Network, Support-Vector Machine, Random Forest, Naive Bayes
 
-For a while now I have been fascinated by computer languages and when over the semester break, I had a bit of time on my hands, I decided to—as an academic exercise—design my own language. My language consists of two components; the recursive descent parser which first lexers and tokenizes the input before generating an abstract syntax tree (AST); and the interpreter which traverses the AST and produces the appropriate output.
+I have a fascination for machine learning and so I had a lot of fun building this full natural-language-processing pipeline
+that on its own can tell whether an online news article is fake or reliable. 
 
-My language currently includes features such as closures, lambda expressions, first class and pure functions, making it well-suited to functional programming. In addition to this I plan to add support for multithreading and a stronger type system plus optimizations for tail-call recursion. I am also experimenting with implementing a stack based virtual machine—bytecode interpreter—to run my language.`,Mv=`
+Here is a description of the program:
+After cleaning and organising a large collection of stories, I trained several 
+well-established machine-learning models including: Naive Bayes, logistic regression, 
+Random Forest, Support-Vector Machine, and a neural network and selected the
+model that performed best. The final system gets the answer right more than 
+96 % of the time on unseen articles. To keep the results transparent, 
+I built a dashboard that highlights the words in each story that raised a 
+red flag, so anyone can see why the program reached its decision. By applying 
+these complex mathematical models, the detector uncovers patterns in language 
+that humans would be very unlikely to spot on their own, making it a powerful aid in 
+the fight against misinformation. 
+
+
+        <h2>Fake-News Detector</h2>
+        <h3>2025</h3>
+        <ul class="skills">
+          <li>Machine Learning</li>
+          <li>Deep Learning</li>
+          <li>NUnit testing</li>
+          <li>Neural Network</li>
+          <li>Python</li>
+          <li>Naive Bayes</li>
+          <li>Support-Vector Machine</li>
+          <li>Random Forest</li>
+          <li>Neural Network</li>
+        </ul>
+        <p>
+`,Mv=`
 
 
 
-## *Glowbal*
-## 2020
+## *Pokedex website*
+## 2025
 
-### • Agile, Design,
-### • Accessibility, UI/UX, Web Dev
-
-As part of the university subject IT Project, I was required to produce an ePortfolio web app as part of a small group. We called our app Glowbal and built it with TypeScript, React, Express and employed an agile development process. I was a front end lead and wrote most of the UI components. I was also responsible for accessibility testing and ensuring users of all abilities could access our app.`,bv=`
+### • Python, Flask,
+### • SQL, CRUD, HTML, CSS
+I’ve had an interest for Pokémon since childhood, and to sharpen my skills in full-stack Python and SQL databases, I decided to build this Pokédex web app.
+Here is a description of what the program does:
+When you open the web app, all 151 original Pokemon load in a flexible card grid that
+works well on phones and desktops, letting you scroll through the list quickly.
+Clicking a card takes you to a page that shows the Pokemon's picture, type, stats,
+height and weight, straight from a tidy SQLite database. From that same page you can
+delete a record and watch the grid refresh instantly, and you can also add a new Pokémon
+through a quick form—the new entry appears right away. 
+Under the hood, a small Flask server keeps everything in three simple tables and serves
+it fast on any screen, so the app stays quick and easy to use.`,bv=`
 
 
 
@@ -3442,7 +3493,7 @@ As part of the university subject IT Project, I was required to produce an ePort
 ##        the University of Copenhagen
 ##
 ###   *Scroll* or type "help" to get started
-`,wv=""+new URL("ed-rl8v77d8.png",import.meta.url).href,nr={name:"/",children:[{name:"bin",children:[]},{name:"dev",children:[]},{name:"lib64",children:[]},{name:"media",children:[]}]};function jc(s){for(const e in s){const t=e.split("/").slice(2);let n=nr;t.forEach((i,r,o)=>{if(r===o.length-1)n.children.push({name:i,data:s[e]});else{let l=n.children.find(c=>c.name===i);l||(l={name:i,children:[]},n.children.push(l)),n=l}})}}jc(Object.assign({"../file-system/home/user/about/about.md":mv,"../file-system/home/user/contact/contact.md":gv,"../file-system/home/user/projects/00-math-toolkit.md":xv,"../file-system/home/user/projects/01-breakout-game.md":vv,"../file-system/home/user/projects/02-blood-alcohol-estimater-app.md":yv,"../file-system/home/user/projects/03-fake-news-detector.md":_v,"../file-system/home/user/projects/04-glowbal.md":Mv,"../file-system/home/user/title/title-legacy.md":bv,"../file-system/home/user/title/title.md":Xc}));jc(Object.assign({"../file-system/home/user/about/ed.png":wv}));console.log(nr);function Di(){function s(o){const a=o.split("/");return a.length>0&&a.at(-1)===""&&a.pop(),a}function e(o,a){for(const l of a)switch(l){case"":o=[nr];break;case"..":o.length>1&&o.pop();break;case"~":o=n();break;case".":break;default:const c=o.at(-1);if(!c||!("children"in c))return;const u=c.children.find(h=>h.name===l);if(!u)return;o.push(u);break}return o}function t(o){return o[o.length-1].children}function n(){const o=nr.children.find(l=>l.name==="home"),a=o.children.find(l=>l.name==="user");return[nr,o,a]}function i(o,a){return e([...o],s(a))}function r(o,a,l){const c=s(a),u=c.pop();if(u===void 0)return"bad_args";const h=e([...o],c),d=h==null?void 0:h.at(-1);return!d||!("children"in d)?"bad_path":d.children.find(f=>f.name===u)?"file_exists":(d.children.push(l==="folder"?{name:u,children:[]}:{name:u,data:""}),"ok")}return{getChildren:t,goHome:n,goto:i,make:r}}function Sv(s,e){const t=Di(),n={name:"cd",short:"change directory",long:""};return{docs:n,app:(r,o)=>{var l;if(o.find(c=>c==="-h"||c==="-help")){s(`
+`,wv=""+new URL("ed-rl8v77d8.png",import.meta.url).href,nr={name:"/",children:[{name:"bin",children:[]},{name:"dev",children:[]},{name:"lib64",children:[]},{name:"media",children:[]}]};function jc(s){for(const e in s){const t=e.split("/").slice(2);let n=nr;t.forEach((i,r,o)=>{if(r===o.length-1)n.children.push({name:i,data:s[e]});else{let l=n.children.find(c=>c.name===i);l||(l={name:i,children:[]},n.children.push(l)),n=l}})}}jc(Object.assign({"../file-system/home/user/about/about.md":mv,"../file-system/home/user/contact/contact.md":gv,"../file-system/home/user/projects/00-math-toolkit.md":xv,"../file-system/home/user/projects/01-breakout-game.md":vv,"../file-system/home/user/projects/02-blood-alcohol-estimater-app.md":yv,"../file-system/home/user/projects/03-fake-news-detector.md":_v,"../file-system/home/user/projects/04-pokedex-website.md":Mv,"../file-system/home/user/title/title-legacy.md":bv,"../file-system/home/user/title/title.md":Xc}));jc(Object.assign({"../file-system/home/user/about/ed.png":wv}));console.log(nr);function Di(){function s(o){const a=o.split("/");return a.length>0&&a.at(-1)===""&&a.pop(),a}function e(o,a){for(const l of a)switch(l){case"":o=[nr];break;case"..":o.length>1&&o.pop();break;case"~":o=n();break;case".":break;default:const c=o.at(-1);if(!c||!("children"in c))return;const u=c.children.find(h=>h.name===l);if(!u)return;o.push(u);break}return o}function t(o){return o[o.length-1].children}function n(){const o=nr.children.find(l=>l.name==="home"),a=o.children.find(l=>l.name==="user");return[nr,o,a]}function i(o,a){return e([...o],s(a))}function r(o,a,l){const c=s(a),u=c.pop();if(u===void 0)return"bad_args";const h=e([...o],c),d=h==null?void 0:h.at(-1);return!d||!("children"in d)?"bad_path":d.children.find(f=>f.name===u)?"file_exists":(d.children.push(l==="folder"?{name:u,children:[]}:{name:u,data:""}),"ok")}return{getChildren:t,goHome:n,goto:i,make:r}}function Sv(s,e){const t=Di(),n={name:"cd",short:"change directory",long:""};return{docs:n,app:(r,o)=>{var l;if(o.find(c=>c==="-h"||c==="-help")){s(`
 ${n.name} – ${n.short}`);return}if(r.length===0||r[0]===""){e.p=t.goHome();return}const a=t.goto(e.p,r[0]);if(console.log(a),!a){s(`
 No such file or directory`);return}if(!("children"in a.at(-1))){s(`
 ${(l=a.at(-1))==null?void 0:l.name}:not a directory`);return}e.p=a}}}function Tv(s,e){const t={name:"echo",short:"display a line of text",long:""};return{docs:t,app:(i,r)=>{if(r.find(a=>a==="-h"||a==="-help")){s(`

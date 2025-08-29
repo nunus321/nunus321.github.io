@@ -2,11 +2,11 @@
 
 
 
-## *Writing Buddy*
+## *Mobile app: Blood-alcohol-estimator*
 ## 2021
 
-### • React, TypeScript, UI/UX, Branding,
-### • AI, Deep Learning, Web Dev
+### • C#, Unity, UI/UX,
+### • Mobile App dev
 For my final year at Danish gymnasium I develop a mobile application 
 that estimates a user’s blood-alcohol content (BAC) with nothing more than the 
 phone in their pocket. After a brief set-up where the user enters weight and biological sex, 
