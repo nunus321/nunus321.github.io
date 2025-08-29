@@ -1,3 +1,5 @@
+!(/images/jonas-title.png?aspect=2&noflow=true&width=1.8)
+
 ##   Hi there, 
 
 #  *I'm Jonas*
