@@ -3362,27 +3362,22 @@ https://www.linkedin.com/in/jonasmersal/\r
 \r
 \r
 \r
-## *Math Toolkit*\r
+## *Mobile app: Blood-alcohol-estimator*\r
 ## 2021\r
 \r
-### • Javascript\r
-### • HTML, CSS, p5.js, \r
-I developed this lightweight desktop web application to help Danish primary- and\r
-secondary-school students explore mathematics visually instead of just on paper.\r
+### • C#, Unity, UI/UX,\r
+### • Mobile App dev\r
+For my final year at Danish gymnasium I develop a mobile application \r
+that estimates a user’s blood-alcohol content (BAC) with nothing more than the \r
+phone in their pocket. After a brief set-up where the user enters weight and biological sex, \r
+the app calculates BAC in real time each time a drink is added, relying on the official equations \r
+published by the danish national health portal, Sundhed.dk. \r
 \r
-Here is a description of the program:\r
-The app has a function plotter where you can type any equation (linear, polynomials etc.)\r
-and see the graph appear instantly. In addition it has four sliders that let you stretch,\r
-compress, or shift the curve along the x- and y-axes, so students can watch in real time how\r
-    each change affects the shape of the function.\r
-It also has a geometry calculator which supports the geometrical types: <br>\r
- • Right-angled triangle <br>\r
- • General triangle<br>\r
- • Square / Rectangle<br>\r
- • Circle<br>\r
-It calculates side lengths, angles, perimeter, and areas from the user inserted information.\r
-I initially built it to give classmates an intuitive “try-and-see” tool and to hone my own skills in Javascript,\r
-HTML and CSS. The pictures under here showcase the live plotter and the main menu.`,vv=`\r
+It also explains the typical side-effects at \r
+different BAC levels, indicates when it is unsafe to drive, keeps daily and weekly consumption \r
+statistics and even shows a countdown to the point at which the user is expected to be sober again. \r
+The project gave me hands-on experience with mobile UI design, data validation and the challenge of \r
+translating clinical formulas into efficient, user-friendly code`,vv=`\r
 \r
 \r
 \r
@@ -3402,25 +3397,6 @@ letting anyone design stages of up to 288 blocks without touching the code. \r
 Special blocks can drop random power-ups or hazards, adding an extra layer of strategy and replay value. \r
 The codebase is fully unit-tested with NUnit and extensively play-tested for reliability; \r
 watch the gameplay video and explore the open-source repository on GitHub. Below is a video of my developed game.`,yv=`\r
-\r
-\r
-\r
-## *Mobile app: Blood-alcohol-estimator*\r
-## 2021\r
-\r
-### • C#, Unity, UI/UX,\r
-### • Mobile App dev\r
-For my final year at Danish gymnasium I develop a mobile application \r
-that estimates a user’s blood-alcohol content (BAC) with nothing more than the \r
-phone in their pocket. After a brief set-up where the user enters weight and biological sex, \r
-the app calculates BAC in real time each time a drink is added, relying on the official equations \r
-published by the danish national health portal, Sundhed.dk. \r
-\r
-It also explains the typical side-effects at \r
-different BAC levels, indicates when it is unsafe to drive, keeps daily and weekly consumption \r
-statistics and even shows a countdown to the point at which the user is expected to be sober again. \r
-The project gave me hands-on experience with mobile UI design, data validation and the challenge of \r
-translating clinical formulas into efficient, user-friendly code`,_v=`\r
 \r
 \r
 \r
@@ -3460,7 +3436,31 @@ the fight against misinformation. \r
           <li>Neural Network</li>\r
         </ul>\r
         <p>\r
-`,Mv=`\r
+`,_v=`\r
+\r
+\r
+\r
+## *Math Toolkit*\r
+## 2021\r
+\r
+### • Javascript\r
+### • HTML, CSS, p5.js, \r
+I developed this lightweight desktop web application to help Danish primary- and\r
+secondary-school students explore mathematics visually instead of just on paper.\r
+\r
+Here is a description of the program:\r
+The app has a function plotter where you can type any equation (linear, polynomials etc.)\r
+and see the graph appear instantly. In addition it has four sliders that let you stretch,\r
+compress, or shift the curve along the x- and y-axes, so students can watch in real time how\r
+    each change affects the shape of the function.\r
+It also has a geometry calculator which supports the geometrical types: <br>\r
+ • Right-angled triangle <br>\r
+ • General triangle<br>\r
+ • Square / Rectangle<br>\r
+ • Circle<br>\r
+It calculates side lengths, angles, perimeter, and areas from the user inserted information.\r
+I initially built it to give classmates an intuitive “try-and-see” tool and to hone my own skills in Javascript,\r
+HTML and CSS. The pictures under here showcase the live plotter and the main menu.`,Mv=`\r
 \r
 \r
 \r
@@ -3519,7 +3519,7 @@ https://jonasalmersaloutlookdk.itch.io/runeweaver\r
 ##        the University of Copenhagen\r
 ##\r
 ###   *Scroll* or type "help" to get started\r
-`,Sv=""+new URL("ed-rl8v77d8.png",import.meta.url).href,nr={name:"/",children:[{name:"bin",children:[]},{name:"dev",children:[]},{name:"lib64",children:[]},{name:"media",children:[]}]};function Yo(s){for(const e in s){const t=e.split("/").slice(2);let n=nr;t.forEach((i,r,o)=>{if(r===o.length-1)n.children.push({name:i,data:s[e]});else{let l=n.children.find(c=>c.name===i);l||(l={name:i,children:[]},n.children.push(l)),n=l}})}}Yo(Object.assign({"../file-system/home/user/about/about.md":mv,"../file-system/home/user/contact/contact.md":gv,"../file-system/home/user/projects/00-math-toolkit.md":xv,"../file-system/home/user/projects/01-breakout-game.md":vv,"../file-system/home/user/projects/02-blood-alcohol-estimater-app.md":yv,"../file-system/home/user/projects/03-fake-news-detector.md":_v,"../file-system/home/user/projects/04-pokedex-website.md":Mv,"../file-system/home/user/projects/05-runeweaver.md":bv,"../file-system/home/user/title/title-legacy.md":wv,"../file-system/home/user/title/title.md":jc}));Yo(Object.assign({"../file-system/home/user/about/ed.png":Sv}));Yo(Object.assign({}));console.log(nr);function Di(){function s(o){const a=o.split("/");return a.length>0&&a.at(-1)===""&&a.pop(),a}function e(o,a){for(const l of a)switch(l){case"":o=[nr];break;case"..":o.length>1&&o.pop();break;case"~":o=n();break;case".":break;default:const c=o.at(-1);if(!c||!("children"in c))return;const u=c.children.find(h=>h.name===l);if(!u)return;o.push(u);break}return o}function t(o){return o[o.length-1].children}function n(){const o=nr.children.find(l=>l.name==="home"),a=o.children.find(l=>l.name==="user");return[nr,o,a]}function i(o,a){return e([...o],s(a))}function r(o,a,l){const c=s(a),u=c.pop();if(u===void 0)return"bad_args";const h=e([...o],c),d=h==null?void 0:h.at(-1);return!d||!("children"in d)?"bad_path":d.children.find(f=>f.name===u)?"file_exists":(d.children.push(l==="folder"?{name:u,children:[]}:{name:u,data:""}),"ok")}return{getChildren:t,goHome:n,goto:i,make:r}}function Tv(s,e){const t=Di(),n={name:"cd",short:"change directory",long:""};return{docs:n,app:(r,o)=>{var l;if(o.find(c=>c==="-h"||c==="-help")){s(`
+`,Sv=""+new URL("ed-rl8v77d8.png",import.meta.url).href,nr={name:"/",children:[{name:"bin",children:[]},{name:"dev",children:[]},{name:"lib64",children:[]},{name:"media",children:[]}]};function Yo(s){for(const e in s){const t=e.split("/").slice(2);let n=nr;t.forEach((i,r,o)=>{if(r===o.length-1)n.children.push({name:i,data:s[e]});else{let l=n.children.find(c=>c.name===i);l||(l={name:i,children:[]},n.children.push(l)),n=l}})}}Yo(Object.assign({"../file-system/home/user/about/about.md":mv,"../file-system/home/user/contact/contact.md":gv,"../file-system/home/user/projects/blood-alcohol-estimater-app.md":xv,"../file-system/home/user/projects/breakout-game.md":vv,"../file-system/home/user/projects/fake-news-detector.md":yv,"../file-system/home/user/projects/math-toolkit.md":_v,"../file-system/home/user/projects/pokedex-website.md":Mv,"../file-system/home/user/projects/runeweaver.md":bv,"../file-system/home/user/title/title-legacy.md":wv,"../file-system/home/user/title/title.md":jc}));Yo(Object.assign({"../file-system/home/user/about/ed.png":Sv}));Yo(Object.assign({}));console.log(nr);function Di(){function s(o){const a=o.split("/");return a.length>0&&a.at(-1)===""&&a.pop(),a}function e(o,a){for(const l of a)switch(l){case"":o=[nr];break;case"..":o.length>1&&o.pop();break;case"~":o=n();break;case".":break;default:const c=o.at(-1);if(!c||!("children"in c))return;const u=c.children.find(h=>h.name===l);if(!u)return;o.push(u);break}return o}function t(o){return o[o.length-1].children}function n(){const o=nr.children.find(l=>l.name==="home"),a=o.children.find(l=>l.name==="user");return[nr,o,a]}function i(o,a){return e([...o],s(a))}function r(o,a,l){const c=s(a),u=c.pop();if(u===void 0)return"bad_args";const h=e([...o],c),d=h==null?void 0:h.at(-1);return!d||!("children"in d)?"bad_path":d.children.find(f=>f.name===u)?"file_exists":(d.children.push(l==="folder"?{name:u,children:[]}:{name:u,data:""}),"ok")}return{getChildren:t,goHome:n,goto:i,make:r}}function Tv(s,e){const t=Di(),n={name:"cd",short:"change directory",long:""};return{docs:n,app:(r,o)=>{var l;if(o.find(c=>c==="-h"||c==="-help")){s(`
 ${n.name} – ${n.short}`);return}if(r.length===0||r[0]===""){e.p=t.goHome();return}const a=t.goto(e.p,r[0]);if(console.log(a),!a){s(`
 No such file or directory`);return}if(!("children"in a.at(-1))){s(`
 ${(l=a.at(-1))==null?void 0:l.name}:not a directory`);return}e.p=a}}}function Ev(s,e){const t={name:"echo",short:"display a line of text",long:""};return{docs:t,app:(i,r)=>{if(r.find(a=>a==="-h"||a==="-help")){s(`
