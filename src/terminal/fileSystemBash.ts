@@ -54,6 +54,14 @@ generateFS(
   })
 );
 
+generateFS(
+  import.meta.glob("../file-system/**/*.gif", {
+    query: "?url",
+    import: "default",
+    eager: true,
+  })
+);
+
 console.log(disk);
 
 
