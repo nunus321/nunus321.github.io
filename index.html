@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <title>Jonas Mersal – Personal Website</title>
+
     <meta
+      id="meta-description"
       name="description"
       content="My name is Jonas Mersal, I’m a computer science student. I have a passion for all things technology and design. I'm especially interested in AI, machine learning and data science."
     />
@@ -17,6 +19,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./icon/180x180.png" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta
+      id="meta-apple-title"
       name="apple-mobile-web-app-title"
       content="Jonas Mersal – Personal Website"
     />
@@ -26,24 +29,128 @@
     />
     <meta name="theme-color" content="#f6d4b1" />
 
-    <meta property="og:title" content="Jonas Mersal – Personal Website" />
-    <meta property="og:description" content="My name is Jonas Mersal, I’m a computer science student..." />
+    <meta
+      id="meta-og-title"
+      property="og:title"
+      content="Jonas Mersal – Personal Website"
+    />
+    <meta
+      id="meta-og-description"
+      property="og:description"
+      content="My name is Jonas Mersal, I’m a computer science student..."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nunus321.github.io/" />
-    <meta property="og:image" content="https://nunus321.github.io/images/previewOfWebsite.png" />
+    <meta
+      property="og:image"
+      content="https://nunus321.github.io/images/previewOfWebsite.png"
+    />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Jonas Mersal – Personal Website" />
-    <meta name="twitter:description" content="My name is Jonas Mersal, I’m a computer science student..." />
-    <meta name="twitter:image" content="https://nunus321.github.io/images/previewOfWebsite.png" />
+    <meta
+      id="meta-twitter-title"
+      name="twitter:title"
+      content="Jonas Mersal – Personal Website"
+    />
+    <meta
+      id="meta-twitter-description"
+      name="twitter:description"
+      content="My name is Jonas Mersal, I’m a computer science student..."
+    />
+    <meta
+      name="twitter:image"
+      content="https://nunus321.github.io/images/previewOfWebsite.png"
+    />
 
     <meta
+      id="meta-og-description-name"
       name="og:description"
       content="My name is Jonas Mersal, I’m a computer science student. I have a passion for all things technology and design. I'm especially interested in AI, machine learning and data science."
     />
+
     <link rel="manifest" href="./manifest.json" />
     <script type="module" src="/src/main.ts"></script>
-    <link rel="stylesheet" href="/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .language-heading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        width: 100%;
+        margin: 22px 0 14px;
+        text-align: center;
+      }
+
+      .language-heading::before,
+      .language-heading::after {
+        content: "";
+        height: 2px;
+        flex: 1;
+        max-width: 260px;
+        background: rgba(0, 0, 0, 0.25);
+      }
+
+      .language-heading span {
+        white-space: nowrap;
+        text-align: center;
+      }
+
+      .language-switcher {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .language-switcher .flag-btn {
+        appearance: none;
+        -webkit-appearance: none;
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        cursor: pointer;
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        width: auto !important;
+        height: auto !important;
+        min-width: 0 !important;
+        min-height: 0 !important;
+        line-height: 0 !important;
+        box-shadow: none !important;
+      }
+
+      .language-switcher .flag-btn img {
+        display: block;
+        width: 100px !important;
+        height: auto !important;
+        border-radius: 4px;
+      }
+
+      .language-switcher .flag-btn.active img {
+        outline: 2px solid white;
+        outline-offset: 3px;
+      }
+
+      .language-heading,
+      .language-heading span,
+      .language-switcher,
+      .language-switcher button,
+      .language-switcher img {
+        font-family: inherit !important;
+      }
+    </style>
   </head>
 
   <body>
@@ -52,11 +159,11 @@
     <canvas class="webgl"></canvas>
 
     <div id="hero-backup">
-      <h3>Hi there, I’m</h3>
+      <h3 data-i18n="heroGreeting">Hi there, I’m</h3>
       <h1>Jonas</h1>
       <ul>
-        <li>Computer Science student</li>
-        <li>From University of Copenhagen</li>
+        <li data-i18n="heroRole">Computer Science student</li>
+        <li data-i18n="heroUniversity">From University of Copenhagen</li>
       </ul>
     </div>
 
@@ -104,65 +211,85 @@
       </div>
 
       <div class="menu-body" onclick="closeMenu()">
-        <a href="#home" onclick="closeMenu()">Home</a>
-        <a href="#aboutMe" onclick="closeMenu()">About</a>
-        <a href="#projects" onclick="closeMenu()">Projects</a>
-        <a href="#contact" onclick="closeMenu()">Contact</a>
+        <a href="#home" onclick="closeMenu()" data-i18n="navHome">Home</a>
+        <a href="#aboutMe" onclick="closeMenu()" data-i18n="navAbout">About</a>
+        <a href="#projects" onclick="closeMenu()" data-i18n="navProjects">Projects</a>
+        <a href="#contact" onclick="closeMenu()" data-i18n="navContact">Contact</a>
       </div>
 
-      <div id="tip-scroll">Scroll &#8595;</div>
+      <div id="tip-scroll" data-i18n="scrollTip">Scroll &#8595;</div>
     </nav>
 
     <main>
       <section>
-        <h1 id="aboutMe">Hi there</h1>
-        <p>
-          My name is Jonas Mersal, a computer science student at the University of Copenhagen. 
-          I was born In Denmark and wrote my first lines of code in primary school and never stopped; 
-          by high school I was leading ambitious class projects and finishing the course with 
-          top marks. Today I’m especially drawn to machine learning, AI, and software development, 
-          turning ideas into everything from machine learning/AI prototypes to web apps.
+        <h1 id="aboutMe" data-i18n="aboutTitle">Hi there</h1>
+
+        <p data-i18n="aboutP1">
+          My name is Jonas Mersal, a computer science student at the University of Copenhagen.
+          I was born in Denmark and wrote my first lines of code in primary school and never stopped;
+          by high school I was leading ambitious class projects and finishing the course with
+          top marks. Today I’m especially drawn to machine learning, AI, and software development,
+          turning ideas into everything from machine learning and AI prototypes to web apps.
         </p>
-        <p>
-          In addition to my love of technology, I follow politics, dive into competitive gaming, 
+
+        <p data-i18n="aboutP2">
+          In addition to my love of technology, I follow politics, dive into competitive gaming,
           and push my limits in the gym.
         </p>
 
-        <p>
-          Below are details of some of the projects I have developed over the
-          years.
+        <p data-i18n="aboutP3">
+          Below are details of some of the projects I have developed over the years.
         </p>
 
-        <p>
+        <p data-i18n="aboutP4">
           I speak both Danish and English, so feel free to reach out to me in either.
         </p>
-<div class="image">
-  <img
-    src="./images/danishflag.avif"
-    alt="Writing Buddy screenshot"
-    style="width: 100px; aspect-ratio: 10 / 5;"
-  />
-  <img
-    src="./images/englishflag.png"
-    alt="Writing Buddy screenshot"
-    style="width: 100px; aspect-ratio: 50 / 25;"
-  />
 
-</div>
+        <div class="language-heading">
+          <span data-i18n="languageHeading">Choose language</span>
+        </div>
+
+        <div class="image language-switcher">
+          <button
+            type="button"
+            id="lang-da"
+            class="flag-btn"
+            aria-label="Skift til dansk"
+          >
+            <img
+              src="./images/danishflag.avif"
+              alt="Dansk flag"
+              style="aspect-ratio: 10 / 5;"
+            />
+          </button>
+
+          <button
+            type="button"
+            id="lang-en"
+            class="flag-btn"
+            aria-label="Switch to English"
+          >
+            <img
+              src="./images/englishflag.png"
+              alt="English flag"
+              style="aspect-ratio: 50 / 25;"
+            />
+          </button>
+        </div>
       </section>
 
       <section>
-        <h1 id="projects">Projects</h1>
-        </div>
+        <h1 id="projects" data-i18n="projectsTitle">Projects</h1>
         <hr />
+
         <h2>Runeweaver</h2>
         <h3>2026</h3>
         <ul class="skills">
-          <li>2D Game Dev</li>
-          <li>Gesture Recognition</li>
-          <li>Cross-Platform</li>
+          <li data-i18n="runeSkill1">2D Game Dev</li>
+          <li data-i18n="runeSkill2">Gesture Recognition</li>
+          <li data-i18n="runeSkill3">Cross-Platform</li>
         </ul>
-        <p>
+        <p data-i18n="runeP1">
           Runeweaver is a 2D fantasy game project I solo developed with a focus on gameplay systems
           and live gesture recognition. A core mechanic of the game is rune drawing: unlike more
           conventional games, where abilities are triggered through fixed buttons or hotkeys, the
@@ -177,7 +304,7 @@
             loading="lazy"
           />
         </div>
-        <p>
+        <p data-i18n="runeP2">
           For example, a zigzag-shaped rune is recognized and turned into a lightning attack, firing
           a beam in the direction the player is aiming. A different rune, shaped like a fork, creates
           a shield that can be used to deflect incoming enemy projectiles.
@@ -190,37 +317,38 @@
             loading="lazy"
           />
         </div>
-        <p>
+        <p data-i18n="runeP3">
           The game also supports both PC and touch devices, with controls that adapt automatically
           to the platform so touch controls only appear when relevant. It has been tested on Windows,
           Mac, and iPhone.
         </p>
-        <p>
+        <p data-i18n="runeP4">
           Playable demo:
           <a href="https://jonasalmersaloutlookdk.itch.io/runeweaver"><u><b>https://jonasalmersaloutlookdk.itch.io/runeweaver</b></u></a>
         </p>
+
         <hr />
-        <h2>Pokedex website: Pokemon index</h2>
+
+        <h2 data-i18n="pokedexTitle">Pokedex website: Pokemon index</h2>
         <h3>2025</h3>
         <ul class="skills">
           <li>Python</li>
           <li>Flask</li>
-          <li>SQL Database</li>
+          <li data-i18n="pokedexSkill3">SQL Database</li>
           <li>CRUD</li>
           <li>HTML</li>
           <li>CSS</li>
         </ul>
-        <p>
-This Pokedex web app is a small project I built to practise full-stack Python and the use of SQL databases.
-When you open the web app, all 151 original Pokemon load in a flexible card grid that
-works well on phones and desktops, letting you scroll through the list quickly.
-Clicking a card takes you to a page that shows the Pokemon's picture, type, stats,
-height and weight, straight from a tidy SQLite database. From that same page you can
-delete a record and watch the grid refresh instantly, and you can also add a new Pokémon
-through a quick form—the new entry appears right away. 
-Under the hood, a small Flask server keeps everything in three simple tables and serves
-it fast on any screen, so the app stays quick and easy to use.
-
+        <p data-i18n="pokedexP1">
+          This Pokedex web app is a small project I built to practise full-stack Python and the use of SQL databases.
+          When you open the web app, all 151 original Pokemon load in a flexible card grid that
+          works well on phones and desktops, letting you scroll through the list quickly.
+          Clicking a card takes you to a page that shows the Pokemon's picture, type, stats,
+          height and weight, straight from a tidy SQLite database. From that same page you can
+          delete a record and watch the grid refresh instantly, and you can also add a new Pokémon
+          through a quick form—the new entry appears right away.
+          Under the hood, a small Flask server keeps everything in three simple tables and serves
+          it fast on any screen, so the app stays quick and easy to use.
         </p>
         <div class="image">
           <video width="100%" controls loop autoplay muted playsinline>
@@ -230,67 +358,69 @@ it fast on any screen, so the app stays quick and easy to use.
         </div>
 
         <hr />
-        <h2>Math Toolkit</h2>
+
+        <h2 data-i18n="mathTitle">Math Toolkit</h2>
         <h3>2022</h3>
         <ul class="skills">
-          <li>Javascript</li>
+          <li data-i18n="mathSkill1">Javascript</li>
           <li>HTML</li>
           <li>CSS</li>
         </ul>
-        <p>
+        <p data-i18n="mathP1">
           I developed this lightweight desktop web application to help Danish primary- and
-           secondary-school students explore mathematics visually instead of just on paper.
+          secondary-school students explore mathematics visually instead of just on paper.
           The app has a function plotter where you can type any equation (for example 2*x^2 – 3)
-           and see the graph appear instantly. In addition it has four sliders that let you stretch,
-            compress, or shift the curve along the x- and y-axes, so students can watch in real time how
-             each change affects the shape of the function.
-          It also has a geometry calculator which supports the geometrical types: <br>
-           • Right-angled triangle <br>
-           • General triangle<br>
-           • Square / Rectangle<br>
-           • Circle<br>
+          and see the graph appear instantly. In addition it has four sliders that let you stretch,
+          compress, or shift the curve along the x- and y-axes, so students can watch in real time how
+          each change affects the shape of the function.
+          It also has a geometry calculator which supports the geometrical types: <br />
+           • Right-angled triangle <br />
+           • General triangle<br />
+           • Square / Rectangle<br />
+           • Circle<br />
           It calculates side lengths, angles, perimeter, and areas from the user inserted information.
           I initially built it to give classmates an intuitive “try-and-see” tool and to hone my own skills in Javascript,
-           HTML and CSS. The pictures under here showcase the live plotter and the main menu.
+          HTML and CSS. The pictures under here showcase the live plotter and the main menu.
         </p>
-        <!-- <p><a href="https://pagebuddy.app">pagebuddy.app</a></p> -->
         <br />
         <div class="image">
           <img
             src="./images/Matematikprogram2.jpeg"
             width="100%"
-            alt="Page Buddy screenshot"
+            alt="Math Toolkit screenshot"
             loading="lazy"
             style="aspect-ratio: 2443 / 1576"
           />
 
           <img
-          src="./images/matematikprogram1.jpeg"
-          width="100%"
-          alt="Page Buddy screenshot"
-          loading="lazy"
-          style="aspect-ratio: 2443 / 1576"
-        />
+            src="./images/matematikprogram1.jpeg"
+            width="100%"
+            alt="Math Toolkit screenshot"
+            loading="lazy"
+            style="aspect-ratio: 2443 / 1576"
+          />
         </div>
+
         <hr />
-        <h2>Breakout Arcade Game</h2>
+
+        <h2 data-i18n="breakoutTitle">Breakout Arcade Game</h2>
         <h3>2024</h3>
         <ul class="skills">
           <li>C#</li>
-          <li>Game Dev</li>
-          <li>NUnit testing</li>
+          <li data-i18n="breakoutSkill2">Game Dev</li>
+          <li data-i18n="breakoutSkill3">NUnit testing</li>
           <li>Parsing</li>
         </ul>
-        <p>
+        <p data-i18n="breakoutP1">
           This project is a modern Breakout-style arcade game written in C#,
-           produced as the capstone for my Software Development course at the University of Copenhagen. 
-           Its architecture follows SOLID principles, using a singleton event-bus mediator and a dedicated state machine 
-           to keep menus, pause, and gameplay modules cleanly separated. 
-           Levels load from simple text files that our custom parser converts on the fly,
-            letting anyone design stages of up to 288 blocks without touching the code. 
-            Special blocks can drop random power-ups or hazards, adding an extra layer of strategy and replay value. 
-            The codebase is fully unit-tested with NUnit and extensively play-tested for reliability; 
-            watch the gameplay video and explore the open-source repository on GitHub. Below is a video of my developed game.
+          produced as the capstone for my Software Development course at the University of Copenhagen.
+          Its architecture follows SOLID principles, using a singleton event-bus mediator and a dedicated state machine
+          to keep menus, pause, and gameplay modules cleanly separated.
+          Levels load from simple text files that our custom parser converts on the fly,
+          letting anyone design stages of up to 288 blocks without touching the code.
+          Special blocks can drop random power-ups or hazards, adding an extra layer of strategy and replay value.
+          The codebase is fully unit-tested with NUnit and extensively play-tested for reliability;
+          watch the gameplay video and explore the open-source repository on GitHub. Below is a video of my developed game.
         </p>
         <div class="image">
           <video width="100%" controls loop autoplay muted playsinline>
@@ -298,137 +428,562 @@ it fast on any screen, so the app stays quick and easy to use.
             Your browser does not support the video tag.
           </video>
         </div>
+
         <hr />
-        <h2>Blood-Alcohol Estimator App</h2>
+
+        <h2 data-i18n="bacTitle">Blood-Alcohol Estimator App</h2>
         <h3>2022</h3>
         <ul class="skills">
           <li>C#</li>
           <li>Unity</li>
           <li>UI/UX</li>
-          <li>Mobile App dev</li>
+          <li data-i18n="bacSkill4">Mobile App dev</li>
         </ul>
-        <p>
-          For my final year at Danish gymnasium I develop a mobile application 
-          that estimates a user’s blood-alcohol content (BAC) with nothing more than the 
-          phone in their pocket. After a brief set-up where the user enters weight and biological sex, 
-          the app calculates BAC in real time each time a drink is added, relying on the official equations 
-          published by the danish national health portal, Sundhed.dk. 
+        <p data-i18n="bacP1">
+          For my final year at Danish gymnasium I developed a mobile application
+          that estimates a user’s blood-alcohol content (BAC) with nothing more than the
+          phone in their pocket. After a brief set-up where the user enters weight and biological sex,
+          the app calculates BAC in real time each time a drink is added, relying on the official equations
+          published by the Danish national health portal, Sundhed.dk.
         </p>
         <button
           class="collapse-btn btn"
           collapsed="true"
           onclick="this.setAttribute('collapsed', this.getAttribute('collapsed') === 'true'? 'false' : 'true')"
+          data-i18n="moreButton"
         >
           more...
         </button>
 
         <div class="collapse-body">
-          <p>
-          It also explains the typical side-effects at 
-          different BAC levels, indicates when it is unsafe to drive, keeps daily and weekly consumption 
-          statistics and even shows a countdown to the point at which the user is expected to be sober again. 
-          The project gave me hands-on experience with mobile UI design, data validation and the challenge of 
-          translating clinical formulas into efficient, user-friendly code
+          <p data-i18n="bacP2">
+            It also explains the typical side-effects at
+            different BAC levels, indicates when it is unsafe to drive, keeps daily and weekly consumption
+            statistics and even shows a countdown to the point at which the user is expected to be sober again.
+            The project gave me hands-on experience with mobile UI design, data validation and the challenge of
+            translating clinical formulas into efficient, user-friendly code
           </p>
         </div>
-                      <div class="image">
-        <img
-          src="./images/alkoholapp1.jpeg"
-          alt="Writing Buddy screenshot"
-          style="width: 500px; aspect-ratio: 940 / 1246;"
-        />
-        <img
-          src="./images/alkoholapp2.jpeg"
-          alt="Writing Buddy screenshot"
-          style="width: 1250px; aspect-ratio: 50 / 25;"
-        />
-      </div>
+
+        <div class="image">
+          <img
+            src="./images/alkoholapp1.jpeg"
+            alt="Alcohol app screenshot"
+            style="width: 500px; aspect-ratio: 940 / 1246;"
+          />
+          <img
+            src="./images/alkoholapp2.jpeg"
+            alt="Alcohol app screenshot"
+            style="width: 1250px; aspect-ratio: 50 / 25;"
+          />
+        </div>
+
         <hr />
 
-        <h2>Fake-News Detector</h2>
+        <h2 data-i18n="fakeTitle">Fake-News Detector</h2>
         <h3>2025</h3>
         <ul class="skills">
-          <li>Machine Learning</li>
-          <li>Deep Learning</li>
-          <li>NUnit testing</li>
-          <li>Neural Network</li>
+          <li data-i18n="fakeSkill1">Machine Learning</li>
+          <li data-i18n="fakeSkill2">Deep Learning</li>
+          <li data-i18n="fakeSkill3">NUnit testing</li>
+          <li data-i18n="fakeSkill4">Neural Network</li>
           <li>Python</li>
           <li>Naive Bayes</li>
-          <li>Support-Vector Machine</li>
+          <li data-i18n="fakeSkill7">Support-Vector Machine</li>
           <li>Random Forest</li>
         </ul>
-        <p>
-I designed and trained a full natural-language-processing pipeline
- that can tell whether an online news article is fake or reliable. 
- After cleaning and organising a large collection of stories, I trained several 
- well-established machine-learning models including: Naive Bayes, logistic regression, 
- Random Forest, Support-Vector Machine, and a neural network and selected the
-  model that performed best. The final system gets the answer right more than 
-  96 % of the time on unseen articles. To keep the results transparent, 
-  I built a dashboard that highlights the words in each story that raised a 
-  red flag, so anyone can see why the program reached its decision. By applying 
-  these complex mathematical models, the detector uncovers patterns in language 
-  that humans would be very unlikely to spot on their own, making it a powerful aid in 
-  the fight against misinformation. 
+        <p data-i18n="fakeP1">
+          I designed and trained a full natural-language-processing pipeline
+          that can tell whether an online news article is fake or reliable.
+          After cleaning and organising a large collection of stories, I trained several
+          well-established machine-learning models including: Naive Bayes, logistic regression,
+          Random Forest, Support-Vector Machine, and a neural network and selected the
+          model that performed best. The final system gets the answer right more than
+          96 % of the time on unseen articles. To keep the results transparent,
+          I built a dashboard that highlights the words in each story that raised a
+          red flag, so anyone can see why the program reached its decision. By applying
+          these complex mathematical models, the detector uncovers patterns in language
+          that humans would be very unlikely to spot on their own, making it a powerful aid in
+          the fight against misinformation.
         </p>
-         <div class="image">
+        <div class="image">
           <img
             src="./images/fakenewsdetection.png"
             width="100%"
-            alt="Writing Buddy screenshot"
+            alt="Fake news detector screenshot"
             style="aspect-ratio: 1330 / 924"
           />
         </div>
+
         <hr />
-        <p>
+
+        <h2 data-i18n="bachelorTitle">Bachelor's Project: AI for Reranking</h2>
+        <h3 data-i18n="bachelorYear">2026 – Present</h3>
+        <ul class="skills">
+          <li>Python</li>
+          <li data-i18n="bachelorSkill2">Machine Learning</li>
+          <li>AI</li>
+          <li data-i18n="bachelorSkill4">Data Processing</li>
+          <li data-i18n="bachelorSkill5">Information Retrieval</li>
+        </ul>
+        <p data-i18n="bachelorP1">
+          For my bachelor's project I am working on learning-to-rank on the Amazon ESCI dataset,
+          where each example contains a search query together with candidate products. The goal is to
+          train models that improve the ordering of products in search results. One of the core challenges
+          is that the space of possible pipelines — which fields to include, which preprocessing steps to apply,
+          and in what order — is far too large to test exhaustively. To tackle this I use the ASHA
+          algorithm (Asynchronous Successive Halving), which intelligently allocates compute budget
+          by quickly discarding poor configurations early and concentrating resources on the most
+          promising ones. This makes it feasible to search a very large pipeline space and still find
+          a strong setup. Beyond the search itself, the project covers everything from data cleaning
+          and feature engineering to model selection and evaluation, with the goal of surfacing the
+          most relevant results at the top of every query.
+        </p>
+        <div class="image">
+          <img
+            src="./images/reranking.avif"
+            alt="Reranking pipeline visualization"
+            style="width: 1000px;"
+          />
+        </div>
+        <hr />
+
+        <h2 data-i18n="docQaTitle">Multilingual AI Model for Document Q&amp;A</h2>
+        <h3>2025</h3>
+        <ul class="skills">
+          <li>Python</li>
+          <li>AI</li>
+          <li>NLP</li>
+          <li data-i18n="docQaSkill4">Fine-tuning</li>
+          <li data-i18n="docQaSkill5">Multilingual</li>
+        </ul>
+        <p data-i18n="docQaP1">
+          I developed an AI model that finds relevant answers directly inside documents, across
+          multiple languages. Given a question, the model locates and extracts the most relevant
+          passage from the source material rather than generating a free-form response — making
+          it grounded and verifiable. The project covered the complete ML workflow: data
+          preparation, model training, fine-tuning, and evaluation to measure answer quality
+          across languages.
+        </p>
+
+        <hr />
+
+        <p data-i18n="projectsEndP">
           This represents just a selection of the projects I have worked
           on over the years. I have more pieces of personal and university projects.
         </p>
       </section>
 
       <section>
-        <h1 id="gitHub">GitHub & Source Code</h1>
-        <p style="text-align: center">
+        <h1 id="gitHub" data-i18n="githubTitle">GitHub & Source Code</h1>
+        <p style="text-align: center" data-i18n="githubP">
           You can view most of these projects, their source code, and setup instructions on my
-          <a href="https://github.com/nunus321"
-            ><u><b>Github</b></u></a
-          >
+          <a href="https://github.com/nunus321"><u><b>Github</b></u></a>
         </p>
       </section>
 
       <section>
-        <h1 id="contact">Contact</h1>
-        <p style="text-align: center">
+        <h1 id="contact" data-i18n="contactTitle">Contact</h1>
+        <p style="text-align: center" data-i18n="contactP">
           Reach out on
-          <a href="https://www.linkedin.com/in/jonasmersal/"
-            ><u><b>LinkedIn</b></u></a
-          >
+          <a href="https://www.linkedin.com/in/jonasmersal/"><u><b>LinkedIn</b></u></a>
         </p>
       </section>
     </main>
 
     <input type="text" id="textarea" readonly />
     <div id="loading">
-      <h2>Booting...</h2>
+      <h2 data-i18n="loadingTitle">Booting...</h2>
       <div id="loading-bar">
         <div id="loading-bar-progress"></div>
       </div>
-      <div id="loading-items">Starting...</div>
+      <div id="loading-items" data-i18n="loadingItems">Starting...</div>
     </div>
+
     <script>
       function closeMenu() {
-        document.getElementsByTagName("nav")[0].classList.remove(["active"]);
+        document.getElementsByTagName("nav")[0].classList.remove("active");
       }
 
       function toggleMenu() {
         const nav = document.getElementsByTagName("nav")[0];
         if (nav.classList.contains("active")) {
-          nav.classList.remove(["active"]);
+          nav.classList.remove("active");
         } else {
           nav.classList.add("active");
         }
       }
+
+      const translations = {
+        en: {
+          heroGreeting: "Hi there, I’m",
+          heroRole: "Computer Science student",
+          heroUniversity: "From University of Copenhagen",
+          navHome: "Home",
+          navAbout: "About",
+          navProjects: "Projects",
+          navContact: "Contact",
+          scrollTip: "Scroll ↓",
+          aboutTitle: "Hi there",
+          aboutP1: `My name is Jonas Mersal, a computer science student at the University of Copenhagen.
+          I was born in Denmark and wrote my first lines of code in primary school and never stopped;
+          by high school I was leading ambitious class projects and finishing the course with
+          top marks. Today I’m especially drawn to machine learning, AI, and software development,
+          turning ideas into everything from machine learning and AI prototypes to web apps.`,
+          aboutP2: `In addition to my love of technology, I follow politics, dive into competitive gaming,
+          and push my limits in the gym.`,
+          aboutP3: `Below are details of some of the projects I have developed over the years.`,
+          aboutP4: `I speak both Danish and English, so feel free to reach out to me in either.`,
+          languageHeading: "Choose language",
+          projectsTitle: "Projects",
+          runeSkill1: "2D Game Dev",
+          runeSkill2: "Gesture Recognition",
+          runeSkill3: "Cross-Platform",
+          runeP1: `Runeweaver is a 2D fantasy game project I solo developed with a focus on gameplay systems
+          and live gesture recognition. A core mechanic of the game is rune drawing: unlike more
+          conventional games, where abilities are triggered through fixed buttons or hotkeys, the
+          player draws symbols directly on the screen, and those symbols are recognized in real time
+          and translated into gameplay actions.`,
+          runeP2: `For example, a zigzag-shaped rune is recognized and turned into a lightning attack, firing
+          a beam in the direction the player is aiming. A different rune, shaped like a fork, creates
+          a shield that can be used to deflect incoming enemy projectiles.`,
+          runeP3: `The game also supports both PC and touch devices, with controls that adapt automatically
+          to the platform so touch controls only appear when relevant. It has been tested on Windows,
+          Mac, and iPhone.`,
+          runeP4: `Playable demo:
+          <a href="https://jonasalmersaloutlookdk.itch.io/runeweaver"><u><b>https://jonasalmersaloutlookdk.itch.io/runeweaver</b></u></a>`,
+          pokedexTitle: "Pokedex website: Pokemon index",
+          pokedexSkill3: "SQL Database",
+          pokedexP1: `This Pokedex web app is a small project I built to practise full-stack Python and the use of SQL databases.
+          When you open the web app, all 151 original Pokemon load in a flexible card grid that
+          works well on phones and desktops, letting you scroll through the list quickly.
+          Clicking a card takes you to a page that shows the Pokemon's picture, type, stats,
+          height and weight, straight from a tidy SQLite database. From that same page you can
+          delete a record and watch the grid refresh instantly, and you can also add a new Pokémon
+          through a quick form—the new entry appears right away.
+          Under the hood, a small Flask server keeps everything in three simple tables and serves
+          it fast on any screen, so the app stays quick and easy to use.`,
+          mathTitle: "Math Toolkit",
+          mathSkill1: "Javascript",
+          mathP1: `I developed this lightweight desktop web application to help Danish primary- and
+          secondary-school students explore mathematics visually instead of just on paper.
+          The app has a function plotter where you can type any equation (for example 2*x^2 – 3)
+          and see the graph appear instantly. In addition it has four sliders that let you stretch,
+          compress, or shift the curve along the x- and y-axes, so students can watch in real time how
+          each change affects the shape of the function.
+          It also has a geometry calculator which supports the geometrical types: <br />
+           • Right-angled triangle <br />
+           • General triangle<br />
+           • Square / Rectangle<br />
+           • Circle<br />
+          It calculates side lengths, angles, perimeter, and areas from the user inserted information.
+          I initially built it to give classmates an intuitive “try-and-see” tool and to hone my own skills in Javascript,
+          HTML and CSS. The pictures under here showcase the live plotter and the main menu.`,
+          breakoutTitle: "Breakout Arcade Game",
+          breakoutSkill2: "Game Dev",
+          breakoutSkill3: "NUnit testing",
+          breakoutP1: `This project is a modern Breakout-style arcade game written in C#,
+          produced as the capstone for my Software Development course at the University of Copenhagen.
+          Its architecture follows SOLID principles, using a singleton event-bus mediator and a dedicated state machine
+          to keep menus, pause, and gameplay modules cleanly separated.
+          Levels load from simple text files that our custom parser converts on the fly,
+          letting anyone design stages of up to 288 blocks without touching the code.
+          Special blocks can drop random power-ups or hazards, adding an extra layer of strategy and replay value.
+          The codebase is fully unit-tested with NUnit and extensively play-tested for reliability;
+          watch the gameplay video and explore the open-source repository on GitHub. Below is a video of my developed game.`,
+          bacTitle: "Blood-Alcohol Estimator App",
+          bacSkill4: "Mobile App dev",
+          moreButton: "more...",
+          bacP1: `For my final year at Danish gymnasium I developed a mobile application
+          that estimates a user’s blood-alcohol content (BAC) with nothing more than the
+          phone in their pocket. After a brief set-up where the user enters weight and biological sex,
+          the app calculates BAC in real time each time a drink is added, relying on the official equations
+          published by the Danish national health portal, Sundhed.dk.`,
+          bacP2: `It also explains the typical side-effects at
+          different BAC levels, indicates when it is unsafe to drive, keeps daily and weekly consumption
+          statistics and even shows a countdown to the point at which the user is expected to be sober again.
+          The project gave me hands-on experience with mobile UI design, data validation and the challenge of
+          translating clinical formulas into efficient, user-friendly code`,
+          fakeTitle: "Fake-News Detector",
+          fakeSkill1: "Machine Learning",
+          fakeSkill2: "Deep Learning",
+          fakeSkill3: "NUnit testing",
+          fakeSkill4: "Neural Network",
+          fakeSkill7: "Support-Vector Machine",
+          fakeP1: `I designed and trained a full natural-language-processing pipeline
+          that can tell whether an online news article is fake or reliable.
+          After cleaning and organising a large collection of stories, I trained several
+          well-established machine-learning models including: Naive Bayes, logistic regression,
+          Random Forest, Support-Vector Machine, and a neural network and selected the
+          model that performed best. The final system gets the answer right more than
+          96 % of the time on unseen articles. To keep the results transparent,
+          I built a dashboard that highlights the words in each story that raised a
+          red flag, so anyone can see why the program reached its decision. By applying
+          these complex mathematical models, the detector uncovers patterns in language
+          that humans would be very unlikely to spot on their own, making it a powerful aid in
+          the fight against misinformation.`,
+          bachelorTitle: "Bachelor's Project: AI for Reranking",
+          bachelorYear: "2026 – Present",
+          bachelorSkill2: "Machine Learning",
+          bachelorSkill4: "Data Processing",
+          bachelorSkill5: "Information Retrieval",
+          bachelorP1: `For my bachelor's project I am working on learning-to-rank on the Amazon ESCI dataset,
+          where each example contains a search query together with candidate products. The goal is to
+          train models that improve the ordering of products in search results. One of the core challenges
+          is that the space of possible pipelines — which fields to include, which preprocessing steps to apply,
+          and in what order — is far too large to test exhaustively. To tackle this I use the ASHA
+          algorithm, which intelligently allocates compute budget by quickly discarding poor configurations
+          early and concentrating resources on the most promising ones. This makes it feasible to search a
+          very large pipeline space and still find a strong setup. Beyond the search itself, the project
+          covers everything from data cleaning and feature engineering to model selection and evaluation,
+          with the goal of surfacing the most relevant results at the top of every query.`,
+          docQaTitle: "Multilingual AI Model for Document Q&A",
+          docQaSkill4: "Fine-tuning",
+          docQaSkill5: "Multilingual",
+          docQaP1: `I developed an AI model that finds relevant answers directly inside documents, across
+          multiple languages. Given a question, the model locates and extracts the most relevant
+          passage from the source material rather than generating a free-form response — making
+          it grounded and verifiable. The project covered the complete ML workflow: data
+          preparation, model training, fine-tuning, and evaluation to measure answer quality
+          across languages.`,
+          projectsEndP: `This represents just a selection of the projects I have worked
+          on over the years. I have more pieces of personal and university projects.`,
+          githubTitle: "GitHub & Source Code",
+          githubP: `You can view most of these projects, their source code, and setup instructions on my
+          <a href="https://github.com/nunus321"><u><b>Github</b></u></a>`,
+          contactTitle: "Contact",
+          contactP: `Reach out on
+          <a href="https://www.linkedin.com/in/jonasmersal/"><u><b>LinkedIn</b></u></a>`,
+          loadingTitle: "Booting...",
+          loadingItems: "Starting..."
+        },
+
+        da: {
+          heroGreeting: "Hej, jeg hedder",
+          heroRole: "Datalogistuderende",
+          heroUniversity: "Fra Københavns Universitet",
+          navHome: "Hjem",
+          navAbout: "Om mig",
+          navProjects: "Projekter",
+          navContact: "Kontakt",
+          scrollTip: "Scroll ned ↓",
+          aboutTitle: "Hej",
+          aboutP1: `Mit navn er Jonas Mersal, og jeg er datalogistuderende på Københavns Universitet.
+          Jeg er født i Danmark og skrev mine første kodelinjer i folkeskolen og stoppede aldrig;
+          i gymnasiet stod jeg i spidsen for ambitiøse klasseprojekter og afsluttede faget med
+          topkarakter. I dag er jeg især interesseret i machine learning, AI og softwareudvikling
+          og i at omsætte idéer til alt fra machine learning og AI-prototyper til webapps.`,
+          aboutP2: `Ud over min interesse for teknologi følger jeg politik, går op i competitive gaming
+          og presser mig selv i fitness.`,
+          aboutP3: `Nedenfor kan du se nogle af de projekter, jeg har udviklet gennem årene.`,
+          aboutP4: `Jeg taler både dansk og engelsk, så du er velkommen til at kontakte mig på begge sprog.`,
+          languageHeading: "Vælg sprog",
+          projectsTitle: "Projekter",
+          runeSkill1: "2D-spiludvikling",
+          runeSkill2: "Gesture recognition",
+          runeSkill3: "På tværs af platforme",
+          runeP1: `Runeweaver er et 2D-fantasyspil, som jeg har udviklet alene med fokus på gameplay-systemer
+          og live gesture recognition. En central mekanik i spillet er runetegning: i modsætning til
+          mere traditionelle spil, hvor evner aktiveres med faste knapper eller hotkeys, tegner
+          spilleren symboler direkte på skærmen, og symbolerne bliver genkendt i realtid og omsat
+          til handlinger i spillet.`,
+          runeP2: `For eksempel bliver en zigzag-formet rune genkendt og lavet om til et lynangreb, som
+          skyder en stråle i den retning, spilleren sigter. En anden rune, formet som en gaffel,
+          skaber et skjold, som kan bruges til at aflede indkommende projektiler fra fjender.`,
+          runeP3: `Spillet understøtter både PC og touch-enheder, med styring der automatisk tilpasser sig
+          platformen, så touch-kontroller kun vises, når de er relevante. Det er testet på Windows,
+          Mac og iPhone.`,
+          runeP4: `Spilbar demo:
+          <a href="https://jonasalmersaloutlookdk.itch.io/runeweaver"><u><b>https://jonasalmersaloutlookdk.itch.io/runeweaver</b></u></a>`,
+          pokedexTitle: "Pokedex-hjemmeside: Pokemon-indeks",
+          pokedexSkill3: "SQL-database",
+          pokedexP1: `Denne Pokedex-webapp er et mindre projekt, jeg byggede for at øve full-stack Python og
+          brugen af SQL-databaser. Når man åbner webappen, bliver alle de 151 originale Pokemon vist
+          i et fleksibelt kort-grid, som fungerer godt på både telefoner og computere, så man hurtigt
+          kan scrolle gennem listen. Når man klikker på et kort, kommer man til en side, der viser
+          Pokemonens billede, type, stats, højde og vægt direkte fra en overskuelig SQLite-database.
+          Fra den samme side kan man slette en post og straks se gridet opdatere sig, og man kan også
+          tilføje en ny Pokemon gennem en hurtig formular, hvorefter den nye post vises med det samme.
+          Bagved holder en lille Flask-server det hele kørende i tre simple tabeller og serverer det
+          hurtigt på alle skærmstørrelser, så appen forbliver hurtig og nem at bruge.`,
+          mathTitle: "Matematikværktøj",
+          mathSkill1: "JavaScript",
+          mathP1: `Jeg udviklede denne lette desktop-webapp for at hjælpe danske folkeskole- og gymnasieelever
+          med at udforske matematik visuelt i stedet for kun på papir.
+          Appen har en funktionsplotter, hvor man kan skrive en vilkårlig ligning, for eksempel 2*x^2 – 3,
+          og straks se grafen. Derudover har den fire sliders, som gør det muligt at strække,
+          komprimere eller flytte kurven langs x- og y-aksen, så eleverne i realtid kan se,
+          hvordan hver ændring påvirker grafens form.
+          Den har også en geometri-beregner, som understøtter følgende figurer: <br />
+           • Retvinklet trekant <br />
+           • Vilkårlig trekant<br />
+           • Kvadrat / rektangel<br />
+           • Cirkel<br />
+          Den beregner sidelængder, vinkler, omkreds og areal ud fra de oplysninger, brugeren indtaster.
+          Jeg byggede den oprindeligt for at give klassekammerater et intuitivt prøv-det-selv-værktøj
+          og samtidig styrke mine egne evner i JavaScript, HTML og CSS. Billederne nedenfor viser
+          den live funktionsplotter og hovedmenuen.`,
+          breakoutTitle: "Breakout-arkadespil",
+          breakoutSkill2: "Spiludvikling",
+          breakoutSkill3: "NUnit-test",
+          breakoutP1: `Dette projekt er et moderne Breakout-lignende arkadespil skrevet i C#, lavet som
+          afsluttende projekt til mit kursus i softwareudvikling på Københavns Universitet.
+          Arkitekturen følger SOLID-principper og bruger en singleton event-bus mediator samt en
+          dedikeret state machine til at holde menuer, pause og gameplay adskilt på en ren måde.
+          Baner bliver indlæst fra simple tekstfiler, som vores egen parser omsætter løbende,
+          så man kan designe baner med op til 288 blokke uden at ændre i koden.
+          Særlige blokke kan slippe tilfældige power-ups eller farer, hvilket giver ekstra strategi
+          og genspilningsværdi. Kodebasen er fuldt unit-testet med NUnit og grundigt play-testet
+          for stabilitet. Se gameplay-videoen og udforsk det open source repository på GitHub.
+          Nedenfor er en video af spillet, jeg udviklede.`,
+          bacTitle: "App til estimering af promille",
+          bacSkill4: "Mobilappudvikling",
+          moreButton: "mere...",
+          bacP1: `Som afsluttende projekt i gymnasiet udviklede jeg en mobilapp, der estimerer en brugers
+          promille med ikke andet end telefonen i lommen. Efter en kort opsætning, hvor brugeren
+          indtaster vægt og biologisk køn, beregner appen promillen i realtid, hver gang en drink
+          tilføjes, baseret på de officielle formler fra den danske sundhedsportal Sundhed.dk.`,
+          bacP2: `Den forklarer også de typiske bivirkninger ved forskellige promilleniveauer, viser hvornår
+          det er uforsvarligt at køre bil, holder statistik over dagligt og ugentligt forbrug og
+          viser endda en nedtælling til det tidspunkt, hvor brugeren forventes at være ædru igen.
+          Projektet gav mig praktisk erfaring med mobil UI-design, datavalidering og udfordringen
+          ved at omsætte kliniske formler til effektiv og brugervenlig kode.`,
+          fakeTitle: "Fake news-detektor",
+          fakeSkill1: "Machine learning",
+          fakeSkill2: "Deep learning",
+          fakeSkill3: "NUnit-test",
+          fakeSkill4: "Neuralt netværk",
+          fakeSkill7: "Support-vektor-maskine",
+          fakeP1: `Jeg designede og trænede en komplet NLP-pipeline, som kan afgøre, om en online nyhedsartikel
+          er falsk eller troværdig. Efter at have renset og organiseret en stor samling artikler
+          trænede jeg flere veletablerede machine learning-modeller, herunder Naive Bayes,
+          logistisk regression, Random Forest, Support-vektor-maskine og et neuralt netværk,
+          og valgte den model, der klarede sig bedst. Det endelige system rammer rigtigt i mere
+          end 96 % af tilfældene på artikler, det ikke har set før. For at gøre resultaterne
+          gennemsigtige byggede jeg et dashboard, der fremhæver de ord i hver artikel, som gav
+          anledning til mistanke, så man kan se, hvorfor programmet nåede frem til sin beslutning.
+          Ved at anvende disse komplekse matematiske modeller finder det mønstre i sproget,
+          som mennesker meget sjældent selv ville opdage, og det gør systemet til et stærkt
+          hjælpemiddel i kampen mod misinformation.`,
+          bachelorTitle: "Bachelorprojekt: AI til reranking",
+          bachelorYear: "2026 – Nu",
+          bachelorSkill2: "Machine learning",
+          bachelorSkill4: "Databehandling",
+          bachelorSkill5: "Informationssøgning",
+          bachelorP1: `I mit bachelorprojekt arbejder jeg med learning to rank på Amazon ESCI-datasættet,
+          hvor hvert eksempel består af en søgeforespørgsel sammen med kandidatprodukter. Målet er at
+          træne modeller, der forbedrer rækkefølgen af produkter i søgeresultater. En af de centrale
+          udfordringer er, at mængden af mulige pipelines — altså hvilke felter der skal med, hvilke
+          preprocessing-trin der skal bruges, og i hvilken rækkefølge — er alt for stor til at teste
+          udtømmende. For at håndtere det bruger jeg ASHA-algoritmen, som fordeler compute-budgettet
+          klogt ved hurtigt at sortere dårlige konfigurationer fra tidligt og i stedet bruge ressourcerne
+          på de mest lovende. Det gør det muligt at søge i et meget stort pipeline-rum og stadig finde
+          en stærk løsning. Ud over selve søgningen dækker projektet alt fra datarensning og feature
+          engineering til modelvalg og evaluering med målet om at få de mest relevante resultater
+          øverst for hver søgning.`,
+          docQaTitle: "Flersproget AI-model til dokumentspørgsmål og svar",
+          docQaSkill4: "Finetuning",
+          docQaSkill5: "Flersproget",
+          docQaP1: `Jeg udviklede en AI-model, som finder relevante svar direkte i dokumenter på tværs af
+          flere sprog. Givet et spørgsmål finder og udtrækker modellen det mest relevante tekststykke
+          fra kildematerialet i stedet for at generere et frit svar, hvilket gør den mere forankret
+          og nemmere at verificere. Projektet dækkede hele ML-workflowet: dataklargøring,
+          modeltræning, finetuning og evaluering for at måle kvaliteten af svar på tværs af sprog.`,
+          projectsEndP: `Dette er kun et udvalg af de projekter, jeg har arbejdet på gennem årene.
+          Jeg har flere personlige projekter og universitetsprojekter.`,
+          githubTitle: "GitHub og kildekode",
+          githubP: `Du kan se de fleste af disse projekter, deres kildekode og installationsvejledninger på min
+          <a href="https://github.com/nunus321"><u><b>Github</b></u></a>`,
+          contactTitle: "Kontakt",
+          contactP: `Kontakt mig på
+          <a href="https://www.linkedin.com/in/jonasmersal/"><u><b>LinkedIn</b></u></a>`,
+          loadingTitle: "Starter...",
+          loadingItems: "Starter..."
+        }
+      };
+
+      const metaTranslations = {
+        en: {
+          title: "Jonas Mersal – Personal Website",
+          description:
+            "My name is Jonas Mersal, I’m a computer science student. I have a passion for all things technology and design. I'm especially interested in AI, machine learning and data science.",
+          ogTitle: "Jonas Mersal – Personal Website",
+          ogDescription: "My name is Jonas Mersal, I’m a computer science student...",
+          ogDescriptionName:
+            "My name is Jonas Mersal, I’m a computer science student. I have a passion for all things technology and design. I'm especially interested in AI, machine learning and data science.",
+          twitterTitle: "Jonas Mersal – Personal Website",
+          twitterDescription: "My name is Jonas Mersal, I’m a computer science student...",
+          appleTitle: "Jonas Mersal – Personal Website"
+        },
+        da: {
+          title: "Jonas Mersal – Personlig hjemmeside",
+          description:
+            "Mit navn er Jonas Mersal, og jeg er datalogistuderende. Jeg interesserer mig især for AI, machine learning og softwareudvikling.",
+          ogTitle: "Jonas Mersal – Personlig hjemmeside",
+          ogDescription: "Mit navn er Jonas Mersal, og jeg er datalogistuderende...",
+          ogDescriptionName:
+            "Mit navn er Jonas Mersal, og jeg er datalogistuderende. Jeg interesserer mig især for AI, machine learning og softwareudvikling.",
+          twitterTitle: "Jonas Mersal – Personlig hjemmeside",
+          twitterDescription: "Mit navn er Jonas Mersal, og jeg er datalogistuderende...",
+          appleTitle: "Jonas Mersal – Personlig hjemmeside"
+        }
+      };
+
+      function applyMeta(lang) {
+        document.title = metaTranslations[lang].title;
+        document
+          .getElementById("meta-description")
+          .setAttribute("content", metaTranslations[lang].description);
+        document
+          .getElementById("meta-og-title")
+          .setAttribute("content", metaTranslations[lang].ogTitle);
+        document
+          .getElementById("meta-og-description")
+          .setAttribute("content", metaTranslations[lang].ogDescription);
+        document
+          .getElementById("meta-og-description-name")
+          .setAttribute("content", metaTranslations[lang].ogDescriptionName);
+        document
+          .getElementById("meta-twitter-title")
+          .setAttribute("content", metaTranslations[lang].twitterTitle);
+        document
+          .getElementById("meta-twitter-description")
+          .setAttribute("content", metaTranslations[lang].twitterDescription);
+        document
+          .getElementById("meta-apple-title")
+          .setAttribute("content", metaTranslations[lang].appleTitle);
+      }
+
+      function setLanguage(lang) {
+        document.documentElement.lang = lang;
+
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          const key = element.getAttribute("data-i18n");
+          if (translations[lang][key]) {
+            element.innerHTML = translations[lang][key];
+          }
+        });
+
+        applyMeta(lang);
+
+        document.getElementById("lang-da").classList.toggle("active", lang === "da");
+        document.getElementById("lang-en").classList.toggle("active", lang === "en");
+
+        localStorage.setItem("site-language", lang);
+      }
+
+      document.getElementById("lang-da").addEventListener("click", function () {
+        setLanguage("da");
+      });
+
+      document.getElementById("lang-en").addEventListener("click", function () {
+        setLanguage("en");
+      });
+
+      const savedLanguage = localStorage.getItem("site-language") || "en";
+      setLanguage(savedLanguage);
     </script>
+
     <script
       fetchpriority="high"
       src="https://cdn-ts.netlify.app/webgl-helper@3.0.11/webgl-helper.min.js"
