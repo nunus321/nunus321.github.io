@@ -3,7 +3,7 @@
 
 
 # Help
-### EDSH is just like BASH except much more limited.
+### Like BASH except much more limited.
 
 ## • Type*ls* to list directory contents
 

@@ -3553,7 +3553,7 @@ No such file or directory`)}}}const Dv=`\r
 \r
 \r
 # Help\r
-### EDSH is just like BASH except much more limited.\r
+### Like BASH except much more limited.\r
 \r
 ## • Type*ls* to list directory contents\r
 \r
