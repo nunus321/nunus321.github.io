@@ -7,7 +7,7 @@
     <meta
       id="meta-description"
       name="description"
-      content="My name is Jonas Mersal, I’m a computer science student. I have a passion for all things technology and design. I'm especially interested in AI, machine learning and data science."
+      content="My name is Jonas Mersal, I’m a Master's student in Computer Science at the University of Copenhagen. I have a passion for all things technology and design. I'm especially interested in AI, machine learning and data science."
     />
 
     <link rel="icon" type="image/png" href="./icon/32x32.png" />
@@ -37,7 +37,7 @@
     <meta
       id="meta-og-description"
       property="og:description"
-      content="My name is Jonas Mersal, I’m a computer science student..."
+      content="My name is Jonas Mersal, I’m a Master's student in Computer Science..."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nunus321.github.io/" />
@@ -55,7 +55,7 @@
     <meta
       id="meta-twitter-description"
       name="twitter:description"
-      content="My name is Jonas Mersal, I’m a computer science student..."
+      content="My name is Jonas Mersal, I’m a Master's student in Computer Science..."
     />
     <meta
       name="twitter:image"
@@ -65,7 +65,7 @@
     <meta
       id="meta-og-description-name"
       name="og:description"
-      content="My name is Jonas Mersal, I’m a computer science student. I have a passion for all things technology and design. I'm especially interested in AI, machine learning and data science."
+      content="My name is Jonas Mersal, I’m a Master's student in Computer Science at the University of Copenhagen. I have a passion for all things technology and design. I'm especially interested in AI, machine learning and data science."
     />
 
     <link rel="manifest" href="./manifest.json" />
@@ -150,6 +150,74 @@
       .language-switcher img {
         font-family: inherit !important;
       }
+
+      .work-card {
+        width: clamp(0px, 95vw, 2000px);
+        margin: 0 auto;
+        padding: 24px 16px 32px;
+        box-sizing: border-box;
+        border: dashed 2px var(--color);
+        box-shadow: 1px 1px 0px #f6d4b1, 8px 8px 0px rgba(82, 82, 82, 0.25);
+      }
+
+      /* The card is wide so the demo stays readable, but body text keeps the
+         680px measure used everywhere else on the site. */
+      .work-card p {
+        width: 100%;
+        max-width: 680px;
+      }
+
+      .work-card .skills {
+        width: 100%;
+        max-width: 1000px;
+      }
+
+      .work-card h3 {
+        /* "Professionshøjskole" is one long unbreakable word, so scale the
+           pixel font down on narrow screens instead of letting it overflow. */
+        font-size: clamp(0.7em, 3.4vw, 1em);
+        line-height: 1.5;
+        padding: 0 8px;
+        overflow-wrap: break-word;
+      }
+
+      .work-meta {
+        text-align: center;
+        font-size: 0.85em;
+        padding: 4px 8px 12px;
+      }
+
+      .work-demo {
+        display: block;
+        width: 100%;
+        /* Cap the clip at 70% of the window height so the bottom of it stays
+           on screen instead of running past the fold on short displays. */
+        max-width: calc(70vh * 2560 / 1392);
+        margin: 24px auto 0;
+        line-height: 0;
+      }
+
+      .work-demo video {
+        display: block;
+        width: 100%;
+        height: auto;
+        box-shadow: 1px 1px 0px #f6d4b1, 6px 6px 0px rgba(82, 82, 82, 0.25);
+      }
+
+      .work-demo:hover,
+      .work-demo:active {
+        transform: none;
+        box-shadow: none;
+      }
+
+      .work-demo:hover video {
+        box-shadow: 2px 2px 0px #f6d4b1, 10px 10px 0px rgba(82, 82, 82, 0.3);
+      }
+
+      .work-link {
+        text-align: center;
+        padding-top: 20px;
+      }
     </style>
   </head>
 
@@ -162,7 +230,7 @@
       <h3 data-i18n="heroGreeting">Hi there, I’m</h3>
       <h1>Jonas</h1>
       <ul>
-        <li data-i18n="heroRole">Computer Science student</li>
+        <li data-i18n="heroRole">MSc Computer Science student</li>
         <li data-i18n="heroUniversity">From University of Copenhagen</li>
       </ul>
     </div>
@@ -213,6 +281,7 @@
       <div class="menu-body" onclick="closeMenu()">
         <a href="#home" onclick="closeMenu()" data-i18n="navHome">Home</a>
         <a href="#aboutMe" onclick="closeMenu()" data-i18n="navAbout">About</a>
+        <a href="#currentWork" onclick="closeMenu()" data-i18n="navWork">Work</a>
         <a href="#projects" onclick="closeMenu()" data-i18n="navProjects">Projects</a>
         <a href="#contact" onclick="closeMenu()" data-i18n="navContact">Contact</a>
       </div>
@@ -225,7 +294,8 @@
         <h1 id="aboutMe" data-i18n="aboutTitle">Hi there</h1>
 
         <p data-i18n="aboutP1">
-          My name is Jonas Mersal, a computer science student at the University of Copenhagen.
+          My name is Jonas Mersal, and I am a Master's student in Computer Science at the
+          University of Copenhagen.
           I was born in Denmark and wrote my first lines of code in primary school and never stopped;
           by high school I was leading ambitious class projects and finishing the course with
           top marks. Today I’m especially drawn to machine learning, AI, and software development,
@@ -275,6 +345,72 @@
               style="aspect-ratio: 50 / 25;"
             />
           </button>
+        </div>
+      </section>
+
+      <section>
+        <h1 id="currentWork" data-i18n="workTitle">Current Work</h1>
+        <hr />
+
+        <div class="work-card">
+          <h2>SkoleGPT</h2>
+          <h3 data-i18n="workRole">AI Engineer at Københavns Professionshøjskole</h3>
+          <p class="work-meta" data-i18n="workMeta">
+            May 2026 – Present · Copenhagen
+          </p>
+
+          <ul class="skills">
+            <li>Python</li>
+            <li>TypeScript</li>
+            <li data-i18n="workSkillLlm">LLMs</li>
+            <li>RAG</li>
+            <li>Machine Learning</li>
+            <li>Docker</li>
+            <li data-i18n="workSkillTts">Text to Speech</li>
+          </ul>
+
+          <p data-i18n="workP1">
+            I work as an AI Engineer at Københavns Professionshøjskole on SkoleGPT, an open source
+            generative AI platform built for Danish schools. Our models run on DBC's private GPUs in
+            Denmark, so student data can be processed on Danish infrastructure instead of being sent
+            to external AI providers. Because the platform is open source and runs in Denmark, it is
+            more transparent, and schools get more control over their students' data. That makes
+            generative AI better suited for use in teaching.
+          </p>
+
+          <p data-i18n="workP2">
+            I am responsible for the backend and AI side of the platform. I work with the open
+            source LLMs we run on our GPU infrastructure, from evaluation and deployment to fine
+            tuning, and build RAG solutions based on educational and scientific documents. I also
+            work on text to speech, speech to text, the web application and our deployment with Docker.
+          </p>
+
+          <a
+            class="work-demo"
+            href="https://skolegpt.dk/"
+            target="_blank"
+            rel="noopener"
+            data-i18n-label="workDemoLabel"
+            aria-label="SkoleGPT responding to a prompt"
+          >
+            <video
+              width="100%"
+              loop
+              autoplay
+              muted
+              playsinline
+              style="aspect-ratio: 2560 / 1392"
+            >
+              <source src="./images/skolegpt.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </a>
+
+          <p class="work-link" data-i18n="workLink">
+            <a href="https://skolegpt.dk/" target="_blank" rel="noopener"
+              ><u><b>Visit SkoleGPT</b></u></a
+            >
+          </p>
         </div>
       </section>
 
@@ -631,15 +767,17 @@
       const translations = {
         en: {
           heroGreeting: "Hi there, I’m",
-          heroRole: "Computer Science student",
+          heroRole: "MSc Computer Science student",
           heroUniversity: "From University of Copenhagen",
           navHome: "Home",
           navAbout: "About",
+          navWork: "Work",
           navProjects: "Projects",
           navContact: "Contact",
           scrollTip: "Scroll ↓",
           aboutTitle: "Hi there",
-          aboutP1: `My name is Jonas Mersal, a computer science student at the University of Copenhagen.
+          aboutP1: `My name is Jonas Mersal, and I am a Master's student in Computer Science at the
+          University of Copenhagen.
           I was born in Denmark and wrote my first lines of code in primary school and never stopped;
           by high school I was leading ambitious class projects and finishing the course with
           top marks. Today I’m especially drawn to machine learning, AI, and software development,
@@ -649,6 +787,23 @@
           aboutP3: `Below are details of some of the projects I have developed over the years.`,
           aboutP4: `I speak both Danish and English, so feel free to reach out to me in either.`,
           languageHeading: "Choose language",
+          workTitle: "Current Work",
+          workRole: "AI Engineer at Københavns Professionshøjskole",
+          workMeta: "May 2026 – Present · Copenhagen",
+          workSkillLlm: "LLMs",
+          workSkillTts: "Text to Speech",
+          workP1: `I work as an AI Engineer at Københavns Professionshøjskole on SkoleGPT, an open source
+          generative AI platform built for Danish schools. Our models run on DBC's private GPUs in
+          Denmark, so student data can be processed on Danish infrastructure instead of being sent
+          to external AI providers. Because the platform is open source and runs in Denmark, it is
+          more transparent, and schools get more control over their students' data. That makes
+          generative AI better suited for use in teaching.`,
+          workP2: `I am responsible for the backend and AI side of the platform. I work with the open
+          source LLMs we run on our GPU infrastructure, from evaluation and deployment to fine
+          tuning, and build RAG solutions based on educational and scientific documents. I also
+          work on text to speech, speech to text, the web application and our deployment with Docker.`,
+          workDemoLabel: "SkoleGPT responding to a prompt",
+          workLink: `<a href="https://skolegpt.dk/" target="_blank" rel="noopener"><u><b>Visit SkoleGPT</b></u></a>`,
           projectsTitle: "Projects",
           runeSkill1: "2D Game Dev",
           runeSkill2: "Gesture Recognition",
@@ -774,15 +929,16 @@
 
         da: {
           heroGreeting: "Hej, jeg hedder",
-          heroRole: "Datalogistuderende",
+          heroRole: "Kandidatstuderende i datalogi",
           heroUniversity: "Fra Københavns Universitet",
           navHome: "Hjem",
           navAbout: "Om mig",
+          navWork: "Arbejde",
           navProjects: "Projekter",
           navContact: "Kontakt",
           scrollTip: "Scroll ned ↓",
           aboutTitle: "Hej",
-          aboutP1: `Mit navn er Jonas Mersal, og jeg er datalogistuderende på Københavns Universitet.
+          aboutP1: `Mit navn er Jonas Mersal, og jeg læser en kandidat i datalogi på Københavns Universitet.
           Jeg er født i Danmark og skrev mine første kodelinjer i folkeskolen og stoppede aldrig;
           i gymnasiet stod jeg i spidsen for ambitiøse klasseprojekter og afsluttede faget med
           topkarakter. I dag er jeg især interesseret i machine learning, AI og softwareudvikling
@@ -792,6 +948,24 @@
           aboutP3: `Nedenfor kan du se nogle af de projekter, jeg har udviklet gennem årene.`,
           aboutP4: `Jeg taler både dansk og engelsk, så du er velkommen til at kontakte mig på begge sprog.`,
           languageHeading: "Vælg sprog",
+          workTitle: "Nuværende arbejde",
+          workRole: "AI Engineer hos Københavns Professionshøjskole",
+          workMeta: "maj 2026 – Nu · København",
+          workSkillLlm: "LLM'er",
+          workSkillTts: "Tekst til tale",
+          workP1: `Jeg arbejder som AI Engineer hos Københavns Professionshøjskole på SkoleGPT, en open
+          source platform til generativ AI bygget til danske skoler. Vores modeller kører på private
+          GPU'er hos DBC i Danmark, så elevdata kan behandles på dansk infrastruktur i stedet for at
+          blive sendt til eksterne AI udbydere. Fordi platformen er open source og kører i Danmark,
+          er den mere transparent, og skolerne får større kontrol over elevernes data. Det gør
+          generativ AI mere egnet til brug i undervisningen.`,
+          workP2: `Jeg har ansvar for backend- og AI-delen af platformen. Jeg arbejder med de open source
+          LLM'er, vi kører på vores GPU-infrastruktur, fra evaluering og deployment til fine tuning,
+          og bygger RAG løsninger baseret på undervisningsmateriale og videnskabelige dokumenter.
+          Jeg arbejder også med tekst til tale, tale til tekst, webapplikationen og vores deployment
+          med Docker.`,
+          workDemoLabel: "SkoleGPT svarer på en prompt",
+          workLink: `<a href="https://skolegpt.dk/" target="_blank" rel="noopener"><u><b>Besøg SkoleGPT</b></u></a>`,
           projectsTitle: "Projekter",
           runeSkill1: "2D-spiludvikling",
           runeSkill2: "Gesture recognition",
@@ -920,25 +1094,25 @@
         en: {
           title: "Jonas Mersal – Personal Website",
           description:
-            "My name is Jonas Mersal, I’m a computer science student. I have a passion for all things technology and design. I'm especially interested in AI, machine learning and data science.",
+            "My name is Jonas Mersal, I’m a Master's student in Computer Science at the University of Copenhagen. I have a passion for all things technology and design. I'm especially interested in AI, machine learning and data science.",
           ogTitle: "Jonas Mersal – Personal Website",
-          ogDescription: "My name is Jonas Mersal, I’m a computer science student...",
+          ogDescription: "My name is Jonas Mersal, I’m a Master's student in Computer Science...",
           ogDescriptionName:
-            "My name is Jonas Mersal, I’m a computer science student. I have a passion for all things technology and design. I'm especially interested in AI, machine learning and data science.",
+            "My name is Jonas Mersal, I’m a Master's student in Computer Science at the University of Copenhagen. I have a passion for all things technology and design. I'm especially interested in AI, machine learning and data science.",
           twitterTitle: "Jonas Mersal – Personal Website",
-          twitterDescription: "My name is Jonas Mersal, I’m a computer science student...",
+          twitterDescription: "My name is Jonas Mersal, I’m a Master's student in Computer Science...",
           appleTitle: "Jonas Mersal – Personal Website"
         },
         da: {
           title: "Jonas Mersal – Personlig hjemmeside",
           description:
-            "Mit navn er Jonas Mersal, og jeg er datalogistuderende. Jeg interesserer mig især for AI, machine learning og softwareudvikling.",
+            "Mit navn er Jonas Mersal, og jeg læser en kandidat i datalogi på Københavns Universitet. Jeg interesserer mig især for AI, machine learning og softwareudvikling.",
           ogTitle: "Jonas Mersal – Personlig hjemmeside",
-          ogDescription: "Mit navn er Jonas Mersal, og jeg er datalogistuderende...",
+          ogDescription: "Mit navn er Jonas Mersal, og jeg læser en kandidat i datalogi...",
           ogDescriptionName:
-            "Mit navn er Jonas Mersal, og jeg er datalogistuderende. Jeg interesserer mig især for AI, machine learning og softwareudvikling.",
+            "Mit navn er Jonas Mersal, og jeg læser en kandidat i datalogi på Københavns Universitet. Jeg interesserer mig især for AI, machine learning og softwareudvikling.",
           twitterTitle: "Jonas Mersal – Personlig hjemmeside",
-          twitterDescription: "Mit navn er Jonas Mersal, og jeg er datalogistuderende...",
+          twitterDescription: "Mit navn er Jonas Mersal, og jeg læser en kandidat i datalogi...",
           appleTitle: "Jonas Mersal – Personlig hjemmeside"
         }
       };
@@ -975,6 +1149,18 @@
           const key = element.getAttribute("data-i18n");
           if (translations[lang][key]) {
             element.innerHTML = translations[lang][key];
+          }
+        });
+
+        // Translated accessibility text: alt on images, aria-label on everything else.
+        document.querySelectorAll("[data-i18n-label]").forEach((element) => {
+          const key = element.getAttribute("data-i18n-label");
+          if (translations[lang][key]) {
+            if (element.tagName === "IMG") {
+              element.setAttribute("alt", translations[lang][key]);
+            } else {
+              element.setAttribute("aria-label", translations[lang][key]);
+            }
           }
         });
 

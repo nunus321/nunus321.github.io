@@ -3333,7 +3333,7 @@ void main()\r
 \r
 #  *I'm Jonas*\r
 \r
-##   • Computer Science Student\r
+##   • MSc Computer Science Student\r
 ##   • University of Copenhagen\r
 \r
 \r
@@ -3348,7 +3348,7 @@ void main()\r
 \r
 # Hi there\r
 \r
-My name is Jonas Mersal, a computer-science student at the University of Copenhagen. I wrote my first lines of code in primary school and never stopped; by high school I was leading ambitious class projects and finishing the course with top marks. Today I’m especially drawn to machine learning, AI, and software development, turning ideas into everything from compact neural-network prototypes to full-stack web apps.\r
+My name is Jonas Mersal, and I am a Master's student in Computer Science at the University of Copenhagen. I wrote my first lines of code in primary school and never stopped; by high school I was leading ambitious class projects and finishing the course with top marks. Today I’m especially drawn to machine learning, AI, and software development, turning ideas into everything from compact neural-network prototypes to full-stack web apps.\r
 \r
 In addition to my love of technology, I follow politics, dive into competitive gaming, and push my limits in the gym.`,gv=`\r
 \r

@@ -4,7 +4,7 @@
 
 #  *I'm Jonas*
 
-##   • Computer Science Student
+##   • MSc Computer Science Student
 ##   • University of Copenhagen
 
 
