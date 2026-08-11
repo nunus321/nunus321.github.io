@@ -3333,7 +3333,7 @@ void main()\r
 \r
 #  *I'm Jonas*\r
 \r
-##   • MSc Computer Science Student\r
+##   • Computer Science Student\r
 ##   • University of Copenhagen\r
 \r
 \r
