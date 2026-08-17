@@ -217,6 +217,204 @@
         text-align: center;
         padding-top: 20px;
       }
+
+      /* ---- Retro game-menu buttons ---------------------------------------
+         Pixel-art push button built from three stacked layers: a dark outline,
+         a shaded side wall, and a lit top face. Hovering slides the face down
+         into the socket so the side wall shrinks and the button reads as
+         physically depressed, the way a console menu button does.
+
+         The face uses the same orange as the CRT text on the 3D computer
+         (#f99021, src/webgl/screen/textEngine.ts) so the two loudest buttons on
+         the page clearly belong to the machine at the top of it. */
+      .cta-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .pixel-btn {
+        /* Corner staircase: two 4px steps, no curves. Every layer reuses this
+           one shape so the outline tracks the face on the same pixel grid. */
+        --pixel-shape: polygon(
+          8px 0,
+          calc(100% - 8px) 0,
+          calc(100% - 8px) 4px,
+          calc(100% - 4px) 4px,
+          calc(100% - 4px) 8px,
+          100% 8px,
+          100% calc(100% - 8px),
+          calc(100% - 4px) calc(100% - 8px),
+          calc(100% - 4px) calc(100% - 4px),
+          calc(100% - 8px) calc(100% - 4px),
+          calc(100% - 8px) 100%,
+          8px 100%,
+          8px calc(100% - 4px),
+          4px calc(100% - 4px),
+          4px calc(100% - 8px),
+          0 calc(100% - 8px),
+          0 8px,
+          4px 8px,
+          4px 4px,
+          8px 4px
+        );
+        --btn-face: #f99021;
+        --btn-highlight: #ffd089;
+        --btn-shade: #a34e07;
+        --btn-outline: #2e1a0c;
+        /* Height of the side wall the cap stands on. */
+        --btn-depth: 10px;
+        --btn-edge: 3px;
+        /* How far the cap sinks when pressed. Less than the depth so a sliver of
+           wall survives and the button never looks completely flat. */
+        --btn-travel: 8px;
+        /* The link itself is only the hit area, and it keeps its box while the
+           button inside sinks. If the pointer target moved down with the press,
+           a cursor resting in the top few pixels would fall outside, drop the
+           hover, pop the button back up, and buzz. */
+        display: block;
+        box-sizing: border-box;
+        min-width: min(280px, 100%);
+        max-width: 100%;
+        padding-top: var(--btn-depth);
+        text-decoration: none;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      /* The button itself: outline frame, with the side wall inside it. */
+      .pixel-btn-body {
+        position: relative;
+        display: block;
+        /* Pulled up into the strip the link reserves, so at rest the button sits
+           flush with the top of its hit area. Pressing hands part of that offset
+           back and takes the same amount off the wall below. */
+        margin-top: calc(-1 * var(--btn-depth));
+        padding: var(--btn-edge);
+        padding-bottom: calc(var(--btn-edge) + var(--btn-depth));
+        background-color: var(--btn-outline);
+        clip-path: var(--pixel-shape);
+        transition: margin-top 90ms steps(2, end),
+          padding-bottom 90ms steps(2, end);
+      }
+
+      /* The side wall the cap stands on. */
+      .pixel-btn-body::before {
+        content: "";
+        position: absolute;
+        inset: var(--btn-edge);
+        background-color: var(--btn-shade);
+        clip-path: var(--pixel-shape);
+      }
+
+      .pixel-btn-face {
+        position: relative; /* paints above ::before */
+        display: block;
+        padding: 14px 28px 16px;
+        background-color: var(--btn-face);
+        /* Lit top edge of the cap, plus a shaded strip along its bottom so the
+           cap reads as having thickness of its own above the side wall. */
+        box-shadow: inset 0 4px 0 0 var(--btn-highlight),
+          inset 0 -3px 0 0 rgba(94, 43, 4, 0.28);
+        clip-path: var(--pixel-shape);
+        font-family: "public-pixel", monospace;
+        /* Whole pixels only — the pixel font goes soft at fractional sizes. */
+        font-size: 18px;
+        line-height: 1.2;
+        letter-spacing: 1px;
+        text-align: center;
+        color: var(--btn-outline);
+        text-shadow: 0 2px 0 rgba(255, 231, 190, 0.45);
+        transition: box-shadow 90ms steps(2, end);
+      }
+
+      /* main.css scales and shadows every <a> on hover; the press replaces it. */
+      a.pixel-btn:hover,
+      a.pixel-btn:active {
+        transform: none;
+        box-shadow: none;
+      }
+
+      /* Pressed: the cap sinks and the wall under it loses exactly as much
+         height, so the top edge travels down while the bottom edge stays planted
+         on the page. The button gets shorter instead of appearing to tip over,
+         and because margin-top puts back precisely what padding-bottom gives up,
+         the space it occupies never changes and nothing below it moves. */
+      a.pixel-btn:hover .pixel-btn-body {
+        margin-top: calc(-1 * var(--btn-depth) + var(--btn-travel));
+        padding-bottom: calc(
+          var(--btn-edge) + var(--btn-depth) - var(--btn-travel)
+        );
+      }
+
+      /* Lit edge narrows as the cap sinks — less relief, less light on top. */
+      a.pixel-btn:hover .pixel-btn-face {
+        box-shadow: inset 0 2px 0 0 var(--btn-highlight),
+          inset 0 -3px 0 0 rgba(94, 43, 4, 0.28);
+      }
+
+      /* Clicked: bottomed out, wall fully collapsed. */
+      a.pixel-btn:active .pixel-btn-body {
+        margin-top: 0;
+        padding-bottom: var(--btn-edge);
+      }
+
+      a.pixel-btn:active .pixel-btn-face {
+        box-shadow: none;
+      }
+
+      /* clip-path also clips an outline, so the focus ring has to be drawn
+         inside the shape as an inset shadow instead. */
+      a.pixel-btn:focus-visible {
+        outline: none;
+      }
+
+      a.pixel-btn:focus-visible .pixel-btn-face {
+        box-shadow: inset 0 0 0 3px var(--btn-outline),
+          inset 0 4px 0 0 var(--btn-highlight),
+          inset 0 -3px 0 0 rgba(94, 43, 4, 0.28);
+      }
+
+      /* Says where the button goes. Deliberately not in the pixel font: as a
+         second line of blocky caps it read as a detached label rather than part
+         of the button, so it uses the body face and a warm brown that ties it to
+         the button above instead of the grey page ink. */
+      .cta-note {
+        font-size: 15px;
+        color: #6b4a2a;
+      }
+
+      /* Two steps down so the longest label ("Visit SkoleGPT") always fits the
+         680px text column: the widths are measured, not guessed. */
+      @media (max-width: 420px) {
+        .pixel-btn {
+          min-width: 0;
+        }
+        .pixel-btn-face {
+          font-size: 16px;
+          padding: 13px 18px 15px;
+        }
+      }
+
+      @media (max-width: 345px) {
+        .pixel-btn {
+          --btn-depth: 6px;
+          --btn-travel: 4px;
+        }
+        .pixel-btn-face {
+          font-size: 12px;
+          padding: 12px 14px 14px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .pixel-btn,
+        .pixel-btn-face {
+          transition: none;
+        }
+      }
     </style>
     <script type="module" crossorigin src="./assets/index-BKp_Ca56.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-lVidP7Dq.css">
@@ -407,10 +605,17 @@
             </video>
           </a>
 
-          <p class="work-link" data-i18n="workLink">
-            <a href="https://skolegpt.dk/" target="_blank" rel="noopener"
-              ><u><b>Visit SkoleGPT</b></u></a
+          <p class="work-link cta-row" data-i18n="workLink">
+            <a
+              class="pixel-btn"
+              href="https://skolegpt.dk/"
+              target="_blank"
+              rel="noopener"
+              ><span class="pixel-btn-body"
+                ><span class="pixel-btn-face">Visit SkoleGPT</span></span
+              ></a
             >
+            <span class="cta-note">Live at skolegpt.dk</span>
           </p>
         </div>
       </section>
@@ -459,9 +664,17 @@
           to the platform so touch controls only appear when relevant. It has been tested on Windows,
           Mac, and iPhone.
         </p>
-        <p data-i18n="runeP4">
-          Playable demo:
-          <a href="https://jonasalmersaloutlookdk.itch.io/runeweaver"><u><b>https://jonasalmersaloutlookdk.itch.io/runeweaver</b></u></a>
+        <p class="cta-row" data-i18n="runeP4">
+          <a
+            class="pixel-btn"
+            href="https://jonasalmersaloutlookdk.itch.io/runeweaver"
+            target="_blank"
+            rel="noopener"
+            ><span class="pixel-btn-body"
+              ><span class="pixel-btn-face">Play Online</span></span
+            ></a
+          >
+          <span class="cta-note">Playable in your browser</span>
         </p>
 
         <hr />
@@ -804,7 +1017,8 @@
           tuning, and build RAG solutions based on educational and scientific documents. I also
           work on text to speech, speech to text, the web application and our deployment with Docker.`,
           workDemoLabel: "SkoleGPT responding to a prompt",
-          workLink: `<a href="https://skolegpt.dk/" target="_blank" rel="noopener"><u><b>Visit SkoleGPT</b></u></a>`,
+          workLink: `<a class="pixel-btn" href="https://skolegpt.dk/" target="_blank" rel="noopener"><span class="pixel-btn-body"><span class="pixel-btn-face">Visit SkoleGPT</span></span></a>
+          <span class="cta-note">Live at skolegpt.dk</span>`,
           projectsTitle: "Projects",
           runeSkill1: "2D Game Dev",
           runeSkill2: "Gesture Recognition",
@@ -820,8 +1034,8 @@
           runeP3: `The game also supports both PC and touch devices, with controls that adapt automatically
           to the platform so touch controls only appear when relevant. It has been tested on Windows,
           Mac, and iPhone.`,
-          runeP4: `Playable demo:
-          <a href="https://jonasalmersaloutlookdk.itch.io/runeweaver"><u><b>https://jonasalmersaloutlookdk.itch.io/runeweaver</b></u></a>`,
+          runeP4: `<a class="pixel-btn" href="https://jonasalmersaloutlookdk.itch.io/runeweaver" target="_blank" rel="noopener"><span class="pixel-btn-body"><span class="pixel-btn-face">Play Online</span></span></a>
+          <span class="cta-note">Playable in your browser</span>`,
           pokedexTitle: "Pokedex website: Pokemon index",
           pokedexSkill3: "SQL Database",
           pokedexP1: `This Pokedex web app is a small project I built to practise full-stack Python and the use of SQL databases.
@@ -966,7 +1180,8 @@
           Jeg arbejder også med tekst til tale, tale til tekst, webapplikationen og vores deployment
           med Docker.`,
           workDemoLabel: "SkoleGPT svarer på en prompt",
-          workLink: `<a href="https://skolegpt.dk/" target="_blank" rel="noopener"><u><b>Besøg SkoleGPT</b></u></a>`,
+          workLink: `<a class="pixel-btn" href="https://skolegpt.dk/" target="_blank" rel="noopener"><span class="pixel-btn-body"><span class="pixel-btn-face">Besøg SkoleGPT</span></span></a>
+          <span class="cta-note">Ligger live på skolegpt.dk</span>`,
           projectsTitle: "Projekter",
           runeSkill1: "2D-spiludvikling",
           runeSkill2: "Gesture recognition",
@@ -982,8 +1197,8 @@
           runeP3: `Spillet understøtter både PC og touch-enheder, med styring der automatisk tilpasser sig
           platformen, så touch-kontroller kun vises, når de er relevante. Det er testet på Windows,
           Mac og iPhone.`,
-          runeP4: `Spilbar demo:
-          <a href="https://jonasalmersaloutlookdk.itch.io/runeweaver"><u><b>https://jonasalmersaloutlookdk.itch.io/runeweaver</b></u></a>`,
+          runeP4: `<a class="pixel-btn" href="https://jonasalmersaloutlookdk.itch.io/runeweaver" target="_blank" rel="noopener"><span class="pixel-btn-body"><span class="pixel-btn-face">Spil online</span></span></a>
+          <span class="cta-note">Kan spilles i browseren</span>`,
           pokedexTitle: "Pokedex-hjemmeside: Pokemon-indeks",
           pokedexSkill3: "SQL-database",
           pokedexP1: `Denne Pokedex-webapp er et mindre projekt, jeg byggede for at øve full-stack Python og
