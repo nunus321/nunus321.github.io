@@ -377,6 +377,53 @@
           inset 0 -3px 0 0 rgba(94, 43, 4, 0.28);
       }
 
+      /* Small variant for sitting inside a sentence. Everything scales down,
+         including the corner staircase — the full-size 4px steps would eat a
+         third of a button this short. Selectors are doubled up so these win over
+         the narrow-screen overrides below regardless of source order. */
+      .pixel-btn.pixel-btn--inline {
+        --pixel-shape: polygon(
+          4px 0,
+          calc(100% - 4px) 0,
+          calc(100% - 4px) 2px,
+          calc(100% - 2px) 2px,
+          calc(100% - 2px) 4px,
+          100% 4px,
+          100% calc(100% - 4px),
+          calc(100% - 2px) calc(100% - 4px),
+          calc(100% - 2px) calc(100% - 2px),
+          calc(100% - 4px) calc(100% - 2px),
+          calc(100% - 4px) 100%,
+          4px 100%,
+          4px calc(100% - 2px),
+          2px calc(100% - 2px),
+          2px calc(100% - 4px),
+          0 calc(100% - 4px),
+          0 4px,
+          2px 4px,
+          2px 2px,
+          4px 2px
+        );
+        --btn-depth: 4px;
+        --btn-edge: 2px;
+        --btn-travel: 2px;
+        display: inline-block;
+        min-width: 0;
+        /* Sits on the text's midline rather than its baseline, so the sentence
+           reads through it instead of stepping over it. */
+        vertical-align: middle;
+      }
+
+      .pixel-btn.pixel-btn--inline .pixel-btn-face {
+        padding: 5px 10px 6px;
+        font-size: 12px;
+        letter-spacing: 0;
+        /* Thinner lit edge and bottom strip to match the smaller cap. */
+        box-shadow: inset 0 2px 0 0 var(--btn-highlight),
+          inset 0 -2px 0 0 rgba(94, 43, 4, 0.28);
+        text-shadow: none;
+      }
+
       /* Says where the button goes. Deliberately not in the pixel font: as a
          second line of blocky caps it read as a detached label rather than part
          of the button, so it uses the body face and a warm brown that ties it to
@@ -416,8 +463,8 @@
         }
       }
     </style>
-    <script type="module" crossorigin src="./assets/index-BKp_Ca56.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-lVidP7Dq.css">
+    <script type="module" crossorigin src="./assets/index-DXtGVWL8.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-TBkU1G1T.css">
   </head>
 
   <body>
@@ -796,23 +843,27 @@
           the app calculates BAC in real time each time a drink is added, relying on the official equations
           published by the Danish national health portal, Sundhed.dk.
         </p>
-        <button
-          class="collapse-btn btn"
-          collapsed="true"
-          onclick="this.setAttribute('collapsed', this.getAttribute('collapsed') === 'true'? 'false' : 'true')"
-          data-i18n="moreButton"
-        >
-          more...
-        </button>
+        <div class="collapse">
+          <button
+            class="collapse-btn btn"
+            collapsed="true"
+            aria-expanded="false"
+            onclick="var wasClosed = this.getAttribute('collapsed') === 'true'; this.setAttribute('collapsed', wasClosed ? 'false' : 'true'); this.setAttribute('aria-expanded', wasClosed ? 'true' : 'false')"
+            data-i18n="moreButton"
+          >
+            <span class="collapse-more">more...</span
+            ><span class="collapse-less">Show less</span>
+          </button>
 
-        <div class="collapse-body">
-          <p data-i18n="bacP2">
-            It also explains the typical side-effects at
-            different BAC levels, indicates when it is unsafe to drive, keeps daily and weekly consumption
-            statistics and even shows a countdown to the point at which the user is expected to be sober again.
-            The project gave me hands-on experience with mobile UI design, data validation and the challenge of
-            translating clinical formulas into efficient, user-friendly code
-          </p>
+          <div class="collapse-body">
+            <p data-i18n="bacP2">
+              It also explains the typical side-effects at
+              different BAC levels, indicates when it is unsafe to drive, keeps daily and weekly consumption
+              statistics and even shows a countdown to the point at which the user is expected to be sober again.
+              The project gave me hands-on experience with mobile UI design, data validation and the challenge of
+              translating clinical formulas into efficient, user-friendly code
+            </p>
+          </div>
         </div>
 
         <div class="image">
@@ -942,15 +993,35 @@
         <h1 id="gitHub" data-i18n="githubTitle">GitHub & Source Code</h1>
         <p style="text-align: center" data-i18n="githubP">
           You can view most of these projects, their source code, and setup instructions on my
-          <a href="https://github.com/nunus321"><u><b>Github</b></u></a>
+          <a
+            class="pixel-btn pixel-btn--inline"
+            href="https://github.com/nunus321"
+            target="_blank"
+            rel="noopener"
+            ><span class="pixel-btn-body"
+              ><span class="pixel-btn-face">GitHub</span></span
+            ></a
+          >
         </p>
       </section>
 
       <section>
         <h1 id="contact" data-i18n="contactTitle">Contact</h1>
         <p style="text-align: center" data-i18n="contactP">
-          Reach out on
-          <a href="https://www.linkedin.com/in/jonasmersal/"><u><b>LinkedIn</b></u></a>
+          Reach out by email at
+          <a href="mailto:jonasalmersal@outlook.dk"
+            ><u><b>jonasalmersal@outlook.dk</b></u></a
+          >
+          or on
+          <a
+            class="pixel-btn pixel-btn--inline"
+            href="https://www.linkedin.com/in/jonasmersal/"
+            target="_blank"
+            rel="noopener"
+            ><span class="pixel-btn-body"
+              ><span class="pixel-btn-face">LinkedIn</span></span
+            ></a
+          >
         </p>
       </section>
     </main>
@@ -1077,7 +1148,7 @@
           watch the gameplay video and explore the open-source repository on GitHub. Below is a video of my developed game.`,
           bacTitle: "Blood-Alcohol Estimator App",
           bacSkill4: "Mobile App dev",
-          moreButton: "more...",
+          moreButton: `<span class="collapse-more">more...</span><span class="collapse-less">Show less</span>`,
           bacP1: `For my final year at Danish gymnasium I developed a mobile application
           that estimates a user’s blood-alcohol content (BAC) with nothing more than the
           phone in their pocket. After a brief set-up where the user enters weight and biological sex,
@@ -1134,10 +1205,11 @@
           on over the years. I have more pieces of personal and university projects.`,
           githubTitle: "GitHub & Source Code",
           githubP: `You can view most of these projects, their source code, and setup instructions on my
-          <a href="https://github.com/nunus321"><u><b>Github</b></u></a>`,
+          <a class="pixel-btn pixel-btn--inline" href="https://github.com/nunus321" target="_blank" rel="noopener"><span class="pixel-btn-body"><span class="pixel-btn-face">GitHub</span></span></a>`,
           contactTitle: "Contact",
-          contactP: `Reach out on
-          <a href="https://www.linkedin.com/in/jonasmersal/"><u><b>LinkedIn</b></u></a>`,
+          contactP: `Reach out by email at
+          <a href="mailto:jonasalmersal@outlook.dk"><u><b>jonasalmersal@outlook.dk</b></u></a>
+          or on <a class="pixel-btn pixel-btn--inline" href="https://www.linkedin.com/in/jonasmersal/" target="_blank" rel="noopener"><span class="pixel-btn-body"><span class="pixel-btn-face">LinkedIn</span></span></a>`,
           loadingTitle: "Booting...",
           loadingItems: "Starting..."
         },
@@ -1242,7 +1314,7 @@
           Nedenfor er en video af spillet, jeg udviklede.`,
           bacTitle: "App til estimering af promille",
           bacSkill4: "Mobilappudvikling",
-          moreButton: "mere...",
+          moreButton: `<span class="collapse-more">mere...</span><span class="collapse-less">Vis mindre</span>`,
           bacP1: `Som afsluttende projekt i gymnasiet udviklede jeg en mobilapp, der estimerer en brugers
           promille med ikke andet end telefonen i lommen. Efter en kort opsætning, hvor brugeren
           indtaster vægt og biologisk køn, beregner appen promillen i realtid, hver gang en drink
@@ -1297,10 +1369,11 @@
           Jeg har flere personlige projekter og universitetsprojekter.`,
           githubTitle: "GitHub og kildekode",
           githubP: `Du kan se de fleste af disse projekter, deres kildekode og installationsvejledninger på min
-          <a href="https://github.com/nunus321"><u><b>Github</b></u></a>`,
+          <a class="pixel-btn pixel-btn--inline" href="https://github.com/nunus321" target="_blank" rel="noopener"><span class="pixel-btn-body"><span class="pixel-btn-face">GitHub</span></span></a>`,
           contactTitle: "Kontakt",
-          contactP: `Kontakt mig på
-          <a href="https://www.linkedin.com/in/jonasmersal/"><u><b>LinkedIn</b></u></a>`,
+          contactP: `Kontakt mig på mail
+          <a href="mailto:jonasalmersal@outlook.dk"><u><b>jonasalmersal@outlook.dk</b></u></a>
+          eller på <a class="pixel-btn pixel-btn--inline" href="https://www.linkedin.com/in/jonasmersal/" target="_blank" rel="noopener"><span class="pixel-btn-body"><span class="pixel-btn-face">LinkedIn</span></span></a>`,
           loadingTitle: "Starter...",
           loadingItems: "Starter..."
         }

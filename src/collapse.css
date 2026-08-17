@@ -1,3 +1,24 @@
+/* The toggle starts above the collapsed body, and once expanded it moves to the
+   bottom of the text it just revealed. Only the painted order changes: the
+   button stays first in the DOM so the adjacency selectors below still match. */
+.collapse {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.collapse-btn[collapsed="false"] {
+  order: 1;
+}
+
+/* Both labels ship inside the button and the collapsed state picks one. Doing it
+   this way rather than rewriting the label in JS means switching language cannot
+   strand an expanded button showing "show more". */
+.collapse-btn[collapsed="true"] .collapse-less,
+.collapse-btn[collapsed="false"] .collapse-more {
+  display: none;
+}
+
 .collapse-btn[collapsed="true"] + .collapse-body {
   opacity: 0;
   font-size: 0;
